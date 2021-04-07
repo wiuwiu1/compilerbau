@@ -51,4 +51,32 @@ public class NamenScanner {
 		return token;
 	}
 
+	private Token fetchName(int c) throws Exception {
+		Token token = null;
+		switch (c) {
+			case ' ':
+			case '\t':
+			case '\n':
+			case '\r':
+				token = step(ignore, NamenState.WS, true, Token.INVALID);
+				break;
+			case 'a':
+				token = step(c, NamenState.A, true, Token.INVALID);
+				break;
+			case 'p':
+				token = step(c, NamenState.P, true, Token.INVALID);
+				break;
+			case -1:
+				token = step(ignore, NamenState.EOF, true, Token.EOF);
+				break;
+			default:
+				throwError(c);
+		}
+		return token;
+	}
+
+	private void throwError(int c) throws Exception {
+		throw new Exception("Unexpected character: "+ (char) c + " (" + c + ")");
+	}
+
 }

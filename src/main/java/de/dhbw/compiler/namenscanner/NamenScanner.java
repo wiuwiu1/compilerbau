@@ -23,7 +23,6 @@ public class NamenScanner {
 	
 	private NamenState state = NamenState.WS;
 	private int tokentype = Token.INVALID;
-
 	
 	public NamenScanner(Reader input) {
 		this.in = input;
@@ -46,7 +45,113 @@ public class NamenScanner {
 	public Token nextToken() throws Exception {
 		Token token = null;
 		while (token == null) {
-			token = new Token(Token.INVALID, "Change this");
+			int c = in.read();
+			switch (state) {
+				case EOF:
+					token = step(c, NamenState.EOF, true, Token.EOF);
+					break;
+				case WS:
+					switch (c) {
+						case ' ':
+						case '\t':
+						case '\n':
+						case '\r':
+							token = step(ignore, NamenState.WS, false, Token.INVALID);
+							break;
+						case 'a':
+							token = step(c, NamenState.A, false, Token.INVALID);
+							break;
+						case 'p':
+							token = step(c, NamenState.P, false, Token.INVALID);
+							break;
+						case -1:
+							token = step(ignore, NamenState.EOF, false, Token.EOF);
+							break;
+						default:
+							throwError(c);
+					}
+					break;
+				case A:
+					switch (c) {
+						case 'n':
+							token = step(c, NamenState.AN, false, Token.INVALID);
+							break;
+						default:
+							throwError(c);
+					}
+					break;
+				case AN:
+					switch (c) {
+						case 'n':
+							token = step(c, NamenState.ANN, false, Token.INVALID);
+							break;
+						default:
+							throwError(c);
+					}
+					break;
+				case ANN:
+					switch (c) {
+						case 'a':
+							token = step(c, NamenState.ANNA, false, Token.ANNA);
+							break;
+						default:
+							throwError(c);
+					}
+					break;
+				case ANNA:
+				case PETRA:
+				case PETER:
+					token = fetchName(c);
+					break;
+				case P:
+					switch (c) {
+						case 'e':
+							token = step(c, NamenState.PE, false, Token.INVALID);
+							break;
+						default:
+							throwError(c);
+					}
+					break;
+				case PE:
+					switch (c) {
+						case 't':
+							token = step(c, NamenState.PET, false, Token.INVALID);
+							break;
+						default:
+							throwError(c);
+					}
+					break;
+				case PET:
+					switch (c) {
+						case 'e':
+							token = step(c, NamenState.PETE, false, Token.INVALID);
+							break;
+						case 'r':
+							token = step(c, NamenState.PETR, false, Token.INVALID);
+							break;
+						default:
+							throwError(c);
+					}
+					break;
+				case PETE:
+					switch (c) {
+						case 'r':
+							token = step(c, NamenState.PETER, false, Token.PETER);
+							break;
+						default:
+							throwError(c);
+					}
+					break;
+				case PETR:
+					switch (c) {
+						case 'a':
+							token = step(c, NamenState.PETRA, false, Token.PETRA);
+							break;
+						default:
+							throwError(c);
+					}
+					break;
+			}
 		}
 		return token;
 	}

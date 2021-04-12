@@ -56,7 +56,7 @@ public class Token {
 			case FRAC: return "FRAC";
 			default: return "Unknown token type!";
 		}
-			
+
 	}
 
 }

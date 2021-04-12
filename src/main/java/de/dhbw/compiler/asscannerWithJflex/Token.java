@@ -28,13 +28,13 @@ public class Token {
 	private int type;
 	private String text;
 	private int line;
-	private int columnm;
+	private int column;
 	
 	public Token(int type, String text, int line, int column) {
 		this.type = type;
 		this.text = text;
 		this.line = line;
-		this.columnm = column;
+		this.column = column;
 	}
 	
 	public Token(int type, String text) {
@@ -54,11 +54,11 @@ public class Token {
 	}
 	
 	public int getColumn() {
-		return columnm;
+		return column;
 	}
 
 	public String toString() {
-		return "(" + getTypeName(type) + "," + text + "," + line + "," + columnm + ")";
+		return "(" + getTypeName(type) + "," + text + "," + line + "," + column + ")";
 	}
 	
 	public static String getTypeName(int tokenType) {

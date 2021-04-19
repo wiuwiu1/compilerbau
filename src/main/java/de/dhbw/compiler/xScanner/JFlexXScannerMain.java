@@ -32,11 +32,12 @@ public class JFlexXScannerMain {
 		
 		@SuppressWarnings("unused")
 		JFlexXScanner scanner = new JFlexXScanner(new StringReader(TEST));
-		
-		/* 
-		 * Lesen Sie hier die einzelnen Token des oben angebenen String mit Hilfe des 
-		 * Scanners ein und geben Sie sie auf die Konsole aus. 
-		 */
+
+		Token token = scanner.nextToken();
+		while (token.getType() != Token.EOF){
+			System.out.println(token);
+			token = scanner.nextToken();
+		}
 
 	}
 

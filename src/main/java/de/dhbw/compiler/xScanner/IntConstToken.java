@@ -12,13 +12,16 @@
 package de.dhbw.compiler.xScanner;
 
 public class IntConstToken extends Token {
+
+	private final int value;
 	
-	public IntConstToken(int type, String text, int line, int column) {
+	public IntConstToken(int type, String text, int line, int column, int value) {
 		super(type, text, line, column);
+		this.value = value;
 	}
 
 	public int getValue() {
-		return 0;
+		return this.value;
 	}
 
 

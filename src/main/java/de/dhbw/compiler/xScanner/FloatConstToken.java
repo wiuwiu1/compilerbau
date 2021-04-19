@@ -12,9 +12,12 @@
 package de.dhbw.compiler.xScanner;
 
 public class FloatConstToken extends Token {
-	
-	public FloatConstToken(int type, String text, int line, int column) {
+
+	private final double value;
+
+	public FloatConstToken(int type, String text, int line, int column, double value) {
 		super(type, text, line, column);
+		this.value = value;
 	}
 
 	public double getValue() {

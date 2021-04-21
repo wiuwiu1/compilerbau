@@ -11,6 +11,9 @@
 
 package de.dhbw.compiler.xparser;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,10 +23,19 @@ public class Tree {
 	private LinkedList<Tree> children = null;
 	
 	public Tree(Token token) {
-		this.token=token;
-		this.children= new LinkedList<Tree>();
+		this(token, new LinkedList<Tree>());
 	}
-	
+
+	public Tree(Token token, LinkedList<Tree> children) {
+		this.token = token;
+		this.children = children;
+	}
+
+	public Tree(Token token, Tree child) {
+		this(token, (LinkedList<Tree>) Collections.singletonList(child));
+	}
+
+
 	public Token getToken() {
 		return token;
 	}

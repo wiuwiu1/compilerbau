@@ -26,8 +26,12 @@ public class XParser {
 	public Tree parseProgram() {
 		int myPosition = in.getPosition();
 		Tree program, id, semicolon, block, dot, eof;
-		if (((program = parseToken(Token.PROGRAM)) != null) && ((id = parseToken(Token.ID)) != null) && ((semicolon = parseToken(Token.SEMICOLON)) != null
-				&& ((block = parseBlock()) != null)) && ((dot = parseToken(Token.DOT)) != null) && ((eof = parseToken(Token.EOF)) != null)){
+		if (((program = parseToken(Token.PROGRAM)) != null)
+				&& ((id = parseToken(Token.ID)) != null)
+				&& ((semicolon = parseToken(Token.SEMICOLON)) != null
+				&& ((block = parseBlock()) != null))
+				&& ((dot = parseToken(Token.DOT)) != null)
+				&& ((eof = parseToken(Token.EOF)) != null)){
 				LinkedList<Tree> children = new LinkedList<>(Arrays.asList(program, id, semicolon, block, dot, eof));
 				return new Tree(new Token(Token.APROGRAM), children);
 		}
@@ -90,7 +94,9 @@ public class XParser {
 	private Tree parseNumAssign(){
 		int myPosition = in.getPosition();
 		Tree id, assign, numExp;
-		if((id = parseToken(Token.ID)) != null && (assign = parseToken(Token.ASSIGN)) != null && (numExp = parseNumExpr()) != null){
+		if((id = parseToken(Token.ID)) != null
+				&& (assign = parseToken(Token.ASSIGN)) != null
+				&& (numExp = parseNumExpr()) != null){
 			LinkedList<Tree> children = new LinkedList<>(Arrays.asList(id, assign, numExp));
 			return new Tree(new Token(Token.ASSIGNSTAT), children);
 		}

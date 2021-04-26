@@ -143,6 +143,25 @@ public class XParser {
 	}
 
 	private Tree parseNumExpr() {
+		int myPosition = in.getPosition();
+		Tree exp2, exp1, operator;
+
+		if(((exp2 = parseNumExpr2()) != null) &&
+				(((operator = parseToken(Token.PLUS)) != null) ||
+						((operator = parseToken(Token.MINUS)) != null)) &&
+				(exp1 = parseNumExpr()) != null){
+			LinkedList<Tree> children = new LinkedList<>(Arrays.asList(exp2, operator, exp1));
+			return new Tree(new Token(Token.EXPR), children);
+		}
+
+		in.setPosition(myPosition);
+
+		if (((exp2 = parseNumExpr2()) != null)	){
+			return new Tree(new Token(Token.EXPR), exp2);
+		}
+
+		in.setPosition(myPosition);
+		return null;
 	}
 
 	private Tree parseNumExpr2() {

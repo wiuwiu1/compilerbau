@@ -9,11 +9,10 @@
  * **********************************************
  */
 
-package de.dhbw.compiler.xparser;
+package de.dhbw.compiler.xMinParser;
 
 import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.Objects;
 
 public class XParser {
 
@@ -26,8 +25,12 @@ public class XParser {
 	public Tree parseProgram() {
 		int myPosition = in.getPosition();
 		Tree program, id, semicolon, block, dot, eof;
-		if (((program = parseToken(Token.PROGRAM)) != null) && ((id = parseToken(Token.ID)) != null) && ((semicolon = parseToken(Token.SEMICOLON)) != null
-				&& ((block = parseBlock()) != null)) && ((dot = parseToken(Token.DOT)) != null) && ((eof = parseToken(Token.EOF)) != null)){
+		if (((program = parseToken(Token.PROGRAM)) != null)
+				&& ((id = parseToken(Token.ID)) != null)
+				&& ((semicolon = parseToken(Token.SEMICOLON)) != null
+				&& ((block = parseBlock()) != null))
+				&& ((dot = parseToken(Token.DOT)) != null)
+				&& ((eof = parseToken(Token.EOF)) != null)){
 				LinkedList<Tree> children = new LinkedList<>(Arrays.asList(program, id, semicolon, block, dot, eof));
 				return new Tree(new Token(Token.APROGRAM), children);
 		}
@@ -90,7 +93,9 @@ public class XParser {
 	private Tree parseNumAssign(){
 		int myPosition = in.getPosition();
 		Tree id, assign, numExp;
-		if((id = parseToken(Token.ID)) != null && (assign = parseToken(Token.ASSIGN)) != null && (numExp = parseNumExpr()) != null){
+		if((id = parseToken(Token.ID)) != null
+				&& (assign = parseToken(Token.ASSIGN)) != null
+				&& (numExp = parseNumExpr()) != null){
 			LinkedList<Tree> children = new LinkedList<>(Arrays.asList(id, assign, numExp));
 			return new Tree(new Token(Token.ASSIGNSTAT), children);
 		}
@@ -137,6 +142,25 @@ public class XParser {
 	}
 
 	private Tree parseNumExpr() {
+		int myPosition = in.getPosition();
+		Tree exp2, exp1, operator;
+
+		if(((exp2 = parseNumExpr2()) != null) &&
+				(((operator = parseToken(Token.PLUS)) != null) ||
+						((operator = parseToken(Token.MINUS)) != null)) &&
+				(exp1 = parseNumExpr()) != null){
+			LinkedList<Tree> children = new LinkedList<>(Arrays.asList(exp2, operator, exp1));
+			return new Tree(new Token(Token.EXPR), children);
+		}
+
+		in.setPosition(myPosition);
+
+		if (((exp2 = parseNumExpr2()) != null)	){
+			return new Tree(new Token(Token.EXPR), exp2);
+		}
+
+		in.setPosition(myPosition);
+		return null;
 	}
 
 	private Tree parseNumExpr2() {

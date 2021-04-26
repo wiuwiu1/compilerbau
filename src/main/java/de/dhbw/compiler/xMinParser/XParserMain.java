@@ -8,11 +8,9 @@
  * **********************************************
  */
 
-package de.dhbw.compiler.xparser;
+package de.dhbw.compiler.xMinParser;
 
-import java.io.PrintWriter;
 import java.io.StringReader;
-
 
 
 public class XParserMain {
@@ -72,12 +70,8 @@ public class XParserMain {
 	
 	public static void main(String[] args) throws Exception {
 
-		String test =	"program assign;\n"+
-				"begin\n"+
-				"	x :=0;"+
-				"end.";
 
-		JFlexXScanner scanner = new JFlexXScanner(new StringReader(test));
+		JFlexXScanner scanner = new JFlexXScanner(new StringReader(TESTXmin1));
 		TokenReader reader = new TokenReader(scanner);
 		XParser parse = new XParser(reader);
 

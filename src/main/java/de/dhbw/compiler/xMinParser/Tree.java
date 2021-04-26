@@ -9,10 +9,8 @@
  * **********************************************
  */
 
-package de.dhbw.compiler.xparser;
+package de.dhbw.compiler.xMinParser;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;

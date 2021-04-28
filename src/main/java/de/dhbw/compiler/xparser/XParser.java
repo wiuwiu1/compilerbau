@@ -25,16 +25,18 @@ public class XParser {
 
 	public Tree parseProgram() {
 		int myPosition = in.getPosition();
-		Tree program, id, semicolon, block, dot, eof;
+		Tree program, id, semicolon, block, dot, eof, decllist;
 		if (((program = parseToken(Token.PROGRAM)) != null)
 				&& ((id = parseToken(Token.ID)) != null)
 				&& ((semicolon = parseToken(Token.SEMICOLON)) != null
+				&& ((decllist = parseDecList()) != null)
 				&& ((block = parseBlock()) != null))
 				&& ((dot = parseToken(Token.DOT)) != null)
 				&& ((eof = parseToken(Token.EOF)) != null)){
-				LinkedList<Tree> children = new LinkedList<>(Arrays.asList(program, id, semicolon, block, dot, eof));
-				return new Tree(new Token(Token.APROGRAM), children);
+			LinkedList<Tree> children = new LinkedList<>(Arrays.asList(program, id, semicolon, decllist , block, dot, eof ));
+			return new Tree(new Token(Token.APROGRAM), children);
 		}
+
 		in.setPosition(myPosition);
 		return null;
 	}

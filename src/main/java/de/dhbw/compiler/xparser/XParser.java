@@ -39,6 +39,55 @@ public class XParser {
 		return null;
 	}
 
+	private Tree parseDecList(){
+		Tree decl;
+		Tree decList = new Tree(new Token(Token.DECLLIST));
+		while((decl = parseDec()) != null){
+			decList.addLastChild(decl);
+		}
+		return decList;
+	}
+
+	private Tree parseDec(){
+		int myPosition = in.getPosition();
+		Tree id, colon, varType, semicolon;
+		Tree decl = new Tree(new Token(Token.DECL));
+
+		decl.addLastChild(parseModifier());
+
+		if((id = parseToken(Token.ID)) != null
+			&& (colon = parseToken(Token.COLON)) != null
+			&& (
+				(varType = parseToken(Token.INT)) != null
+						|| (varType = parseToken(Token.FLOAT)) != null
+						|| (varType = parseToken(Token.STRING)) != null)
+			&& (semicolon = parseToken(Token.SEMICOLON)) != null){
+			decl.addLastChild(id);
+			decl.addLastChild(colon);
+			decl.addLastChild(varType);
+			decl.addLastChild(semicolon);
+
+			return decl;
+		}
+
+		in.setPosition(myPosition);
+		return null;
+	}
+
+	private Tree parseModifier() {
+		Tree modifier = new Tree(new Token(Token.MODIFIER));
+		Tree read, print;
+
+		if((read = parseToken(Token.READ)) != null){
+			modifier.addLastChild(read);
+		}
+		if((print = parseToken(Token.PRINT)) != null){
+			modifier.addLastChild(print);
+		}
+
+		return modifier;
+	}
+
 	private Tree parseToken(int tokenType) {
 		int myPosition = in.getPosition();
 		Token token;

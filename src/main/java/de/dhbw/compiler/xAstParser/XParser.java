@@ -104,17 +104,18 @@ public class XParser {
 		int myPosition = in.getPosition();
 
 		// decl ::= modifier id ":" type ";".
-		Tree modifier, id, colon, type, semicolon;
+		Tree modifier, id, type;
 		if (((modifier = parseModifier()) != null)
 				&& ((id = parseToken(Token.ID)) != null)
-				&& ((colon = parseToken(Token.COLON)) != null)
+				&& ((parseToken(Token.COLON)) != null)
 				&& ((type = parseType()) != null)
-				&& ((semicolon = parseToken(Token.SEMICOLON)) != null)) {
+				&& ((parseToken(Token.SEMICOLON)) != null)) {
 			Tree tree = new Tree(new Token(Token.DECL));
 			tree.addLastChild(id);
-			tree.addLastChild(colon);
 			tree.addLastChild(type);
-			tree.addLastChild(semicolon);
+			for(Tree child: modifier.getChildren()){
+				tree.addLastChild(child);
+			}
 			return tree;
 		}
 		in.setPosition(myPosition);
@@ -540,7 +541,7 @@ public class XParser {
 		// program ::= program id ";" decllist block "." EOF.
 		if (((program = parseToken(Token.PROGRAM)) != null)
 				&& (((id = parseToken(Token.ID))) != null)
-				&& ((semicolon = parseToken(Token.SEMICOLON)) != null)
+				&& ((parseToken(Token.SEMICOLON)) != null)
 				&& ((decllist = parseDecllist()) != null)
 				&& ((statList = parseStatlist()) != null)
 				&& ((parseToken(Token.DOT)) != null)

@@ -136,7 +136,7 @@ public class Token {
 			case IF:			return "IF";
 			case INT:			return "INT";
 			case PRINT:			return "PRINT";
-			case PROGRAM:		return "PROGRAM";
+			case PROGRAM:		return "program";
 			case READ:			return "READ";
 			case STRING:		return "STRING";
 			case THEN:			return "THEN";

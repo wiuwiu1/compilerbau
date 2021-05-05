@@ -72,7 +72,7 @@ public class XParserMain {
 	
 	public static void main(String[] args) throws Exception {
 		
-		JFlexXScanner	scanner = new JFlexXScanner(new StringReader(TESTXmin1));
+		JFlexXScanner	scanner = new JFlexXScanner(new StringReader(TEST));
 		TokenReader 	reader	= new TokenReader(scanner);
 		XParser			parser	= new XParser(reader);
 		

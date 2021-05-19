@@ -16,10 +16,10 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayInputStream;
 
+import de.dhbw.compiler.antlrxparser.XLexer;
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonToken;
 import org.antlr.runtime.Token;
-import de.dhbw.compiler.antlrxparser.XLexer;
 import de.dhbw.compiler.antlrxparser.XParser;
 
 public abstract class TokenStreamTest {

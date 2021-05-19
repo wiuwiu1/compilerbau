@@ -16,11 +16,11 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayInputStream;
 
+import de.dhbw.compiler.antlrxparser.XLexer;
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.ParserRuleReturnScope;
 import org.antlr.runtime.tree.CommonTree;
-import de.dhbw.compiler.antlrxparser.XLexer;
 import de.dhbw.compiler.antlrxparser.XParser;
 
 public abstract class ParseTreeTest {

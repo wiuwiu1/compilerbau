@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 de\\dhbw\\compiler\\antlrxcompiler\\XTypeCheck.g 2021-05-26 16:08:03
+// $ANTLR 3.5.2 de\\dhbw\\compiler\\antlrxcompiler\\XTypeCheck.g 2021-06-02 12:41:09
 
 package de.dhbw.compiler.antlrxcompiler;
    
@@ -603,6 +603,7 @@ public class XTypeCheck extends TreeParser {
 
 					adaptor.addChild(root_0, ID15_tree);
 
+
 					}
 					break;
 
@@ -676,14 +677,14 @@ public class XTypeCheck extends TreeParser {
 
 			match(input, Token.DOWN, null); 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_expr_in_cond302);
+			pushFollow(FOLLOW_expr_in_cond304);
 			expr17=expr();
 			state._fsp--;
 
 			adaptor.addChild(root_1, expr17.getTree());
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_expr_in_cond304);
+			pushFollow(FOLLOW_expr_in_cond306);
 			expr18=expr();
 			state._fsp--;
 
@@ -750,7 +751,7 @@ public class XTypeCheck extends TreeParser {
 			XTree _first_1 = null;
 			XTree root_1 = (XTree)adaptor.nil();
 			_last = (XTree)input.LT(1);
-			string_literal19=(XTree)match(input,45,FOLLOW_45_in_whilestat312); 
+			string_literal19=(XTree)match(input,45,FOLLOW_45_in_whilestat314); 
 			string_literal19_tree = (XTree)adaptor.dupNode(string_literal19);
 
 
@@ -758,14 +759,14 @@ public class XTypeCheck extends TreeParser {
 
 			match(input, Token.DOWN, null); 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_cond_in_whilestat314);
+			pushFollow(FOLLOW_cond_in_whilestat316);
 			cond20=cond();
 			state._fsp--;
 
 			adaptor.addChild(root_1, cond20.getTree());
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_stat_in_whilestat316);
+			pushFollow(FOLLOW_stat_in_whilestat318);
 			stat21=stat();
 			state._fsp--;
 
@@ -833,7 +834,7 @@ public class XTypeCheck extends TreeParser {
 			XTree _first_1 = null;
 			XTree root_1 = (XTree)adaptor.nil();
 			_last = (XTree)input.LT(1);
-			string_literal22=(XTree)match(input,28,FOLLOW_28_in_assignstat325); 
+			string_literal22=(XTree)match(input,28,FOLLOW_28_in_assignstat327); 
 			string_literal22_tree = (XTree)adaptor.dupNode(string_literal22);
 
 
@@ -841,14 +842,14 @@ public class XTypeCheck extends TreeParser {
 
 			match(input, Token.DOWN, null); 
 			_last = (XTree)input.LT(1);
-			ID23=(XTree)match(input,ID,FOLLOW_ID_in_assignstat327); 
+			ID23=(XTree)match(input,ID,FOLLOW_ID_in_assignstat329); 
 			ID23_tree = (XTree)adaptor.dupNode(ID23);
 
 
 			adaptor.addChild(root_1, ID23_tree);
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_expr_in_assignstat329);
+			pushFollow(FOLLOW_expr_in_assignstat331);
 			expr24=expr();
 			state._fsp--;
 
@@ -916,7 +917,7 @@ public class XTypeCheck extends TreeParser {
 			XTree _first_1 = null;
 			XTree root_1 = (XTree)adaptor.nil();
 			_last = (XTree)input.LT(1);
-			string_literal25=(XTree)match(input,38,FOLLOW_38_in_condstat338); 
+			string_literal25=(XTree)match(input,38,FOLLOW_38_in_condstat342); 
 			string_literal25_tree = (XTree)adaptor.dupNode(string_literal25);
 
 
@@ -924,14 +925,14 @@ public class XTypeCheck extends TreeParser {
 
 			match(input, Token.DOWN, null); 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_cond_in_condstat340);
+			pushFollow(FOLLOW_cond_in_condstat344);
 			cond26=cond();
 			state._fsp--;
 
 			adaptor.addChild(root_1, cond26.getTree());
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_stat_in_condstat342);
+			pushFollow(FOLLOW_stat_in_condstat346);
 			stat27=stat();
 			state._fsp--;
 
@@ -948,7 +949,7 @@ public class XTypeCheck extends TreeParser {
 					// de\\dhbw\\compiler\\antlrxcompiler\\XTypeCheck.g:40:29: stat
 					{
 					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_stat_in_condstat344);
+					pushFollow(FOLLOW_stat_in_condstat348);
 					stat28=stat();
 					state._fsp--;
 
@@ -1022,7 +1023,7 @@ public class XTypeCheck extends TreeParser {
 			XTree _first_1 = null;
 			XTree root_1 = (XTree)adaptor.nil();
 			_last = (XTree)input.LT(1);
-			string_literal29=(XTree)match(input,37,FOLLOW_37_in_forstat355); 
+			string_literal29=(XTree)match(input,37,FOLLOW_37_in_forstat359); 
 			string_literal29_tree = (XTree)adaptor.dupNode(string_literal29);
 
 
@@ -1030,28 +1031,28 @@ public class XTypeCheck extends TreeParser {
 
 			match(input, Token.DOWN, null); 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_assignstat_in_forstat357);
+			pushFollow(FOLLOW_assignstat_in_forstat361);
 			assignstat30=assignstat();
 			state._fsp--;
 
 			adaptor.addChild(root_1, assignstat30.getTree());
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_cond_in_forstat359);
+			pushFollow(FOLLOW_cond_in_forstat363);
 			cond31=cond();
 			state._fsp--;
 
 			adaptor.addChild(root_1, cond31.getTree());
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_assignstat_in_forstat361);
+			pushFollow(FOLLOW_assignstat_in_forstat365);
 			assignstat32=assignstat();
 			state._fsp--;
 
 			adaptor.addChild(root_1, assignstat32.getTree());
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_stat_in_forstat363);
+			pushFollow(FOLLOW_stat_in_forstat367);
 			stat33=stat();
 			state._fsp--;
 
@@ -1148,7 +1149,7 @@ public class XTypeCheck extends TreeParser {
 
 
 					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_assignstat_in_stat375);
+					pushFollow(FOLLOW_assignstat_in_stat379);
 					assignstat34=assignstat();
 					state._fsp--;
 
@@ -1163,7 +1164,7 @@ public class XTypeCheck extends TreeParser {
 
 
 					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_condstat_in_stat379);
+					pushFollow(FOLLOW_condstat_in_stat383);
 					condstat35=condstat();
 					state._fsp--;
 
@@ -1178,7 +1179,7 @@ public class XTypeCheck extends TreeParser {
 
 
 					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_whilestat_in_stat383);
+					pushFollow(FOLLOW_whilestat_in_stat387);
 					whilestat36=whilestat();
 					state._fsp--;
 
@@ -1193,7 +1194,7 @@ public class XTypeCheck extends TreeParser {
 
 
 					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_forstat_in_stat387);
+					pushFollow(FOLLOW_forstat_in_stat391);
 					forstat37=forstat();
 					state._fsp--;
 
@@ -1208,7 +1209,7 @@ public class XTypeCheck extends TreeParser {
 
 
 					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_statlist_in_stat391);
+					pushFollow(FOLLOW_statlist_in_stat395);
 					statlist38=statlist();
 					state._fsp--;
 
@@ -1270,7 +1271,7 @@ public class XTypeCheck extends TreeParser {
 			XTree _first_1 = null;
 			XTree root_1 = (XTree)adaptor.nil();
 			_last = (XTree)input.LT(1);
-			STATLIST39=(XTree)match(input,STATLIST,FOLLOW_STATLIST_in_statlist399); 
+			STATLIST39=(XTree)match(input,STATLIST,FOLLOW_STATLIST_in_statlist403); 
 			STATLIST39_tree = (XTree)adaptor.dupNode(STATLIST39);
 
 
@@ -1292,7 +1293,7 @@ public class XTypeCheck extends TreeParser {
 						// de\\dhbw\\compiler\\antlrxcompiler\\XTypeCheck.g:43:23: stat
 						{
 						_last = (XTree)input.LT(1);
-						pushFollow(FOLLOW_stat_in_statlist401);
+						pushFollow(FOLLOW_stat_in_statlist405);
 						stat40=stat();
 						state._fsp--;
 
@@ -1370,7 +1371,7 @@ public class XTypeCheck extends TreeParser {
 			XTree _first_1 = null;
 			XTree root_1 = (XTree)adaptor.nil();
 			_last = (XTree)input.LT(1);
-			string_literal41=(XTree)match(input,41,FOLLOW_41_in_program413); 
+			string_literal41=(XTree)match(input,41,FOLLOW_41_in_program417); 
 			string_literal41_tree = (XTree)adaptor.dupNode(string_literal41);
 
 
@@ -1378,21 +1379,21 @@ public class XTypeCheck extends TreeParser {
 
 			match(input, Token.DOWN, null); 
 			_last = (XTree)input.LT(1);
-			ID42=(XTree)match(input,ID,FOLLOW_ID_in_program415); 
+			ID42=(XTree)match(input,ID,FOLLOW_ID_in_program419); 
 			ID42_tree = (XTree)adaptor.dupNode(ID42);
 
 
 			adaptor.addChild(root_1, ID42_tree);
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_decllist_in_program417);
+			pushFollow(FOLLOW_decllist_in_program421);
 			decllist43=decllist();
 			state._fsp--;
 
 			adaptor.addChild(root_1, decllist43.getTree());
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_statlist_in_program419);
+			pushFollow(FOLLOW_statlist_in_program423);
 			statlist44=statlist();
 			state._fsp--;
 
@@ -1441,33 +1442,33 @@ public class XTypeCheck extends TreeParser {
 	public static final BitSet FOLLOW_FLOATCONST_in_expr243 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_STRINGCONST_in_expr261 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_ID_in_expr279 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_set_in_cond290 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expr_in_cond302 = new BitSet(new long[]{0x0000000005C30700L});
-	public static final BitSet FOLLOW_expr_in_cond304 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_45_in_whilestat312 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_cond_in_whilestat314 = new BitSet(new long[]{0x0000206010008000L});
-	public static final BitSet FOLLOW_stat_in_whilestat316 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_28_in_assignstat325 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ID_in_assignstat327 = new BitSet(new long[]{0x0000000005C30700L});
-	public static final BitSet FOLLOW_expr_in_assignstat329 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_38_in_condstat338 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_cond_in_condstat340 = new BitSet(new long[]{0x0000206010008000L});
-	public static final BitSet FOLLOW_stat_in_condstat342 = new BitSet(new long[]{0x0000206010008008L});
-	public static final BitSet FOLLOW_stat_in_condstat344 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_37_in_forstat355 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_assignstat_in_forstat357 = new BitSet(new long[]{0x00000001C0000000L});
-	public static final BitSet FOLLOW_cond_in_forstat359 = new BitSet(new long[]{0x0000000010000000L});
-	public static final BitSet FOLLOW_assignstat_in_forstat361 = new BitSet(new long[]{0x0000206010008000L});
-	public static final BitSet FOLLOW_stat_in_forstat363 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_assignstat_in_stat375 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_condstat_in_stat379 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_whilestat_in_stat383 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_forstat_in_stat387 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_statlist_in_stat391 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_STATLIST_in_statlist399 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_stat_in_statlist401 = new BitSet(new long[]{0x0000206010008008L});
-	public static final BitSet FOLLOW_41_in_program413 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ID_in_program415 = new BitSet(new long[]{0x0000000000000040L});
-	public static final BitSet FOLLOW_decllist_in_program417 = new BitSet(new long[]{0x0000000000008000L});
-	public static final BitSet FOLLOW_statlist_in_program419 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_set_in_cond292 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expr_in_cond304 = new BitSet(new long[]{0x0000000005C30700L});
+	public static final BitSet FOLLOW_expr_in_cond306 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_45_in_whilestat314 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_cond_in_whilestat316 = new BitSet(new long[]{0x0000206010008000L});
+	public static final BitSet FOLLOW_stat_in_whilestat318 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_28_in_assignstat327 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_ID_in_assignstat329 = new BitSet(new long[]{0x0000000005C30700L});
+	public static final BitSet FOLLOW_expr_in_assignstat331 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_38_in_condstat342 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_cond_in_condstat344 = new BitSet(new long[]{0x0000206010008000L});
+	public static final BitSet FOLLOW_stat_in_condstat346 = new BitSet(new long[]{0x0000206010008008L});
+	public static final BitSet FOLLOW_stat_in_condstat348 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_37_in_forstat359 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_assignstat_in_forstat361 = new BitSet(new long[]{0x00000001C0000000L});
+	public static final BitSet FOLLOW_cond_in_forstat363 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_assignstat_in_forstat365 = new BitSet(new long[]{0x0000206010008000L});
+	public static final BitSet FOLLOW_stat_in_forstat367 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_assignstat_in_stat379 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_condstat_in_stat383 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_whilestat_in_stat387 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_forstat_in_stat391 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_statlist_in_stat395 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_STATLIST_in_statlist403 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_stat_in_statlist405 = new BitSet(new long[]{0x0000206010008008L});
+	public static final BitSet FOLLOW_41_in_program417 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_ID_in_program419 = new BitSet(new long[]{0x0000000000000040L});
+	public static final BitSet FOLLOW_decllist_in_program421 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_statlist_in_program423 = new BitSet(new long[]{0x0000000000000008L});
 }

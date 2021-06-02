@@ -87,7 +87,9 @@ public class AntlrXCompiler {
 		parser.setTreeAdaptor(xTreeAdaptor);
 		CommonTree tree = parser.program().getTree();
 		
-		//TODO Weitere Stufen Aufrufen
+		XtoJava xtoJava = new XtoJava(new CommonTreeNodeStream(xTreeAdaptor,tree));
+		StringTemplate template = (StringTemplate) xtoJava.program().getTemplate();
+		System.out.println(template.toString());
 		
 	}
 }

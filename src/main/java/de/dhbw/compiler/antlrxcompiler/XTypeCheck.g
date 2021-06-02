@@ -32,7 +32,7 @@ expr:      ^(('+' | '-' | '*' | '/') expr expr)         //TODO
             | INTCONST {$INTCONST.tree.exprType = XType.IntType;}
             | FLOATCONST {$FLOATCONST.tree.exprType = XType.FloatType;}
             | STRINGCONST {$STRINGCONST.tree.exprType = XType.StringType;}
-            | ID {symbols.get()};   //TODO
+            | ID {};   //TODO
 
 cond: ^(('<' | '>' | '=') expr expr);
 whilestat: ^('while' cond stat);

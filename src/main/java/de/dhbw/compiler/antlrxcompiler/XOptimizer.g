@@ -78,9 +78,56 @@ options {
  }
 
 
-bottomup: uminus;
+bottomup: uminus | foldConstAddInt | foldConstMinusInt | foldConstMultInt | foldConstDivInt | foldConstAddFloat
+| foldConstMinusFloat | foldConstMultFloat | foldConstDivFloat | foldConstAddFloatInt | foldConstMinusFloatInt
+| foldConstMultFloatInt | foldConstDivFloatInt;
+
 
 uminus:	  
     ^(UMINUS x=INTCONST) -> INTCONST[ "-"+$x.text ]
   | ^(UMINUS x=FLOATCONST) -> FLOATCONST["-"+$x.text ];
 
+multZeroOne:
+^('*' x=INTCONST {$x.text.equals("0")||$x.text.equals("1") }?  ^(op=('+' | '-' | '*' | '/' | ID) y=.* ))
+    -> {$x.text.equals("0") }? $x
+    -> ^($op$y*)
+| ^('*' ^(op=('+' | '-' | '*' | '/' | ID) y=.*) x=INTCONST {$x.text.equals("0")||$x.text.equals("0")}?)
+    -> {$x.text.equals("0") }? $x
+    -> ^($op$y*);
+
+
+foldConstAddInt:
+    ^('+' l=INTCONST r=INTCONST) -> INTCONST[opInt($l.text, $r.text, '+')];
+
+foldConstMinusInt:
+    ^('-' l=INTCONST r=INTCONST) -> INTCONST[opInt($l.text, $r.text, '-')];
+
+foldConstMultInt:
+    ^('*' l=INTCONST r=INTCONST) -> INTCONST[opInt($l.text, $r.text, '*')];
+
+foldConstDivInt:
+    ^('/' l=INTCONST r=INTCONST) -> INTCONST[opInt($l.text, $r.text, '/')];
+
+foldConstAddFloat:
+    ^('+' l=FLOATCONST r=FLOATCONST) -> FLOATCONST[opFloat($l.text, $r.text, '+')];
+
+foldConstMinusFloat:
+    ^('-' l=FLOATCONST r=FLOATCONST) -> FLOATCONST[opFloat($l.text, $r.text, '-')];
+
+foldConstMultFloat:
+    ^('*' l=FLOATCONST r=FLOATCONST) -> FLOATCONST[opFloat($l.text, $r.text, '*')];
+
+foldConstDivFloat:
+    ^('/' l=FLOATCONST r=FLOATCONST) -> FLOATCONST[opFloat($l.text, $r.text, '/')];
+
+foldConstAddFloatInt:
+    ^('+' l=FLOATCONST r=INTCONST) -> FLOATCONST[opFloat($l.text, $r.text, '+')];
+
+foldConstMinusFloatInt:
+    ^('-' l=FLOATCONST r=INTCONST) -> FLOATCONST[opFloat($l.text, $r.text, '-')];
+
+foldConstMultFloatInt:
+    ^('*' l=FLOATCONST r=INTCONST) -> FLOATCONST[opFloat($l.text, $r.text, '*')];
+
+foldConstDivFloatInt:
+    ^('/' l=FLOATCONST r=INTCONST) -> FLOATCONST[opFloat($l.text, $r.text, '/')];

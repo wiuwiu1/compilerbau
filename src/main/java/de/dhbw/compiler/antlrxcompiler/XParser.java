@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 de\\dhbw\\compiler\\antlrxcompiler\\X.g 2021-05-26 15:58:24
+// $ANTLR 3.5.2 de\\dhbw\\compiler\\antlrxcompiler\\X.g 2021-06-07 15:31:50
 package de.dhbw.compiler.antlrxcompiler;
 
 import org.antlr.runtime.*;
@@ -450,7 +450,7 @@ public class XParser extends Parser {
 					stream_29.add(char_literal11);
 
 					// AST REWRITE
-					// elements: type, ID, 40
+					// elements: ID, 40, type
 					// token labels: type
 					// rule labels: retval
 					// token list labels: 
@@ -550,7 +550,7 @@ public class XParser extends Parser {
 					stream_29.add(char_literal16);
 
 					// AST REWRITE
-					// elements: type, ID, 42, 40
+					// elements: type, 42, 40, ID
 					// token labels: type
 					// rule labels: retval
 					// token list labels: 
@@ -1536,7 +1536,7 @@ public class XParser extends Parser {
 
 			stream_stat.add(stat55.getTree());
 			// AST REWRITE
-			// elements: stat, cond, 45
+			// elements: cond, 45, stat
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -2007,7 +2007,7 @@ public class XParser extends Parser {
 			stream_EOF.add(EOF80);
 
 			// AST REWRITE
-			// elements: decllist, statlist, ID, 41
+			// elements: 41, ID, decllist, statlist
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 

@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g 2021-06-07 15:15:07
+// $ANTLR 3.5.2 de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g 2021-06-07 16:42:57
 
     package de.dhbw.compiler.antlrxcompiler;
 
@@ -164,7 +164,7 @@ public class XOptimizer extends TreeRewriter {
 
 
 	// $ANTLR start "bottomup"
-	// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:81:1: bottomup : ( uminus | foldConstAddInt | foldConstMinusInt | foldConstMultInt | foldConstDivInt | foldConstAddFloat | foldConstMinusFloat | foldConstMultFloat | foldConstDivFloat | foldConstAddFloatInt | foldConstMinusFloatInt | foldConstMultFloatInt | foldConstDivFloatInt );
+	// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:81:1: bottomup : ( uminus | foldConstAddInt | foldConstMinusInt | foldConstMultInt | foldConstDivInt | foldConstAddFloat | foldConstMinusFloat | foldConstMultFloat | foldConstDivFloat | foldConstAddFloatInt | foldConstMinusFloatInt | foldConstMultFloatInt | foldConstDivFloatInt | foldConstAddIntFloat | foldConstMinusIntFloat | foldConstMultIntFloat | foldConstDivIntFloat | foldMultZero );
 	@Override
 	public final XOptimizer.bottomup_return bottomup() throws RecognitionException {
 		XOptimizer.bottomup_return retval = new XOptimizer.bottomup_return();
@@ -189,11 +189,16 @@ public class XOptimizer extends TreeRewriter {
 		TreeRuleReturnScope foldConstMinusFloatInt11 =null;
 		TreeRuleReturnScope foldConstMultFloatInt12 =null;
 		TreeRuleReturnScope foldConstDivFloatInt13 =null;
+		TreeRuleReturnScope foldConstAddIntFloat14 =null;
+		TreeRuleReturnScope foldConstMinusIntFloat15 =null;
+		TreeRuleReturnScope foldConstMultIntFloat16 =null;
+		TreeRuleReturnScope foldConstDivIntFloat17 =null;
+		TreeRuleReturnScope foldMultZero18 =null;
 
 
 		try {
-			// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:81:9: ( uminus | foldConstAddInt | foldConstMinusInt | foldConstMultInt | foldConstDivInt | foldConstAddFloat | foldConstMinusFloat | foldConstMultFloat | foldConstDivFloat | foldConstAddFloatInt | foldConstMinusFloatInt | foldConstMultFloatInt | foldConstDivFloatInt )
-			int alt1=13;
+			// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:81:9: ( uminus | foldConstAddInt | foldConstMinusInt | foldConstMultInt | foldConstDivInt | foldConstAddFloat | foldConstMinusFloat | foldConstMultFloat | foldConstDivFloat | foldConstAddFloatInt | foldConstMinusFloatInt | foldConstMultFloatInt | foldConstDivFloatInt | foldConstAddIntFloat | foldConstMinusIntFloat | foldConstMultIntFloat | foldConstDivIntFloat | foldMultZero )
+			int alt1=18;
 			switch ( input.LA(1) ) {
 			case UMINUS:
 				{
@@ -206,7 +211,29 @@ public class XOptimizer extends TreeRewriter {
 				if ( (LA1_2==DOWN) ) {
 					int LA1_6 = input.LA(3);
 					if ( (LA1_6==INTCONST) ) {
-						alt1=2;
+						int LA1_10 = input.LA(4);
+						if ( (LA1_10==INTCONST) ) {
+							alt1=2;
+						}
+						else if ( (LA1_10==FLOATCONST) ) {
+							alt1=14;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								for (int nvaeConsume = 0; nvaeConsume < 4 - 1; nvaeConsume++) {
+									input.consume();
+								}
+								NoViableAltException nvae =
+									new NoViableAltException("", 1, 10, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
 					}
 					else if ( (LA1_6==FLOATCONST) ) {
 						int LA1_11 = input.LA(4);
@@ -272,7 +299,29 @@ public class XOptimizer extends TreeRewriter {
 				if ( (LA1_3==DOWN) ) {
 					int LA1_7 = input.LA(3);
 					if ( (LA1_7==INTCONST) ) {
-						alt1=3;
+						int LA1_12 = input.LA(4);
+						if ( (LA1_12==INTCONST) ) {
+							alt1=3;
+						}
+						else if ( (LA1_12==FLOATCONST) ) {
+							alt1=15;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								for (int nvaeConsume = 0; nvaeConsume < 4 - 1; nvaeConsume++) {
+									input.consume();
+								}
+								NoViableAltException nvae =
+									new NoViableAltException("", 1, 12, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
 					}
 					else if ( (LA1_7==FLOATCONST) ) {
 						int LA1_13 = input.LA(4);
@@ -336,11 +385,36 @@ public class XOptimizer extends TreeRewriter {
 				{
 				int LA1_4 = input.LA(2);
 				if ( (LA1_4==DOWN) ) {
-					int LA1_8 = input.LA(3);
-					if ( (LA1_8==INTCONST) ) {
-						alt1=4;
-					}
-					else if ( (LA1_8==FLOATCONST) ) {
+					switch ( input.LA(3) ) {
+					case INTCONST:
+						{
+						int LA1_14 = input.LA(4);
+						if ( (LA1_14==INTCONST) ) {
+							alt1=4;
+						}
+						else if ( (LA1_14==FLOATCONST) ) {
+							alt1=16;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								for (int nvaeConsume = 0; nvaeConsume < 4 - 1; nvaeConsume++) {
+									input.consume();
+								}
+								NoViableAltException nvae =
+									new NoViableAltException("", 1, 14, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+						}
+						break;
+					case FLOATCONST:
+						{
 						int LA1_15 = input.LA(4);
 						if ( (LA1_15==FLOATCONST) ) {
 							alt1=8;
@@ -364,9 +438,14 @@ public class XOptimizer extends TreeRewriter {
 							}
 						}
 
-					}
-
-					else {
+						}
+						break;
+					case ID:
+						{
+						alt1=18;
+						}
+						break;
+					default:
 						if (state.backtracking>0) {state.failed=true; return retval;}
 						int nvaeMark = input.mark();
 						try {
@@ -380,7 +459,6 @@ public class XOptimizer extends TreeRewriter {
 							input.rewind(nvaeMark);
 						}
 					}
-
 				}
 
 				else {
@@ -404,15 +482,12 @@ public class XOptimizer extends TreeRewriter {
 				if ( (LA1_5==DOWN) ) {
 					int LA1_9 = input.LA(3);
 					if ( (LA1_9==INTCONST) ) {
-						alt1=5;
-					}
-					else if ( (LA1_9==FLOATCONST) ) {
 						int LA1_17 = input.LA(4);
-						if ( (LA1_17==FLOATCONST) ) {
-							alt1=9;
+						if ( (LA1_17==INTCONST) ) {
+							alt1=5;
 						}
-						else if ( (LA1_17==INTCONST) ) {
-							alt1=13;
+						else if ( (LA1_17==FLOATCONST) ) {
+							alt1=17;
 						}
 
 						else {
@@ -424,6 +499,31 @@ public class XOptimizer extends TreeRewriter {
 								}
 								NoViableAltException nvae =
 									new NoViableAltException("", 1, 17, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+					}
+					else if ( (LA1_9==FLOATCONST) ) {
+						int LA1_18 = input.LA(4);
+						if ( (LA1_18==FLOATCONST) ) {
+							alt1=9;
+						}
+						else if ( (LA1_18==INTCONST) ) {
+							alt1=13;
+						}
+
+						else {
+							if (state.backtracking>0) {state.failed=true; return retval;}
+							int nvaeMark = input.mark();
+							try {
+								for (int nvaeConsume = 0; nvaeConsume < 4 - 1; nvaeConsume++) {
+									input.consume();
+								}
+								NoViableAltException nvae =
+									new NoViableAltException("", 1, 18, input);
 								throw nvae;
 							} finally {
 								input.rewind(nvaeMark);
@@ -731,6 +831,106 @@ public class XOptimizer extends TreeRewriter {
 
 					}
 					break;
+				case 14 :
+					// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:83:50: foldConstAddIntFloat
+					{
+					_last = (XTree)input.LT(1);
+					pushFollow(FOLLOW_foldConstAddIntFloat_in_bottomup126);
+					foldConstAddIntFloat14=foldConstAddIntFloat();
+					state._fsp--;
+					if (state.failed) return retval;
+					if ( state.backtracking==1 ) 
+					 
+					if ( _first_0==null ) _first_0 = (XTree)foldConstAddIntFloat14.getTree();
+
+					if ( state.backtracking==1 ) {
+					retval.tree = _first_0;
+					if ( adaptor.getParent(retval.tree)!=null && adaptor.isNil( adaptor.getParent(retval.tree) ) )
+						retval.tree = (XTree)adaptor.getParent(retval.tree);
+					}
+
+					}
+					break;
+				case 15 :
+					// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:83:72: foldConstMinusIntFloat
+					{
+					_last = (XTree)input.LT(1);
+					pushFollow(FOLLOW_foldConstMinusIntFloat_in_bottomup129);
+					foldConstMinusIntFloat15=foldConstMinusIntFloat();
+					state._fsp--;
+					if (state.failed) return retval;
+					if ( state.backtracking==1 ) 
+					 
+					if ( _first_0==null ) _first_0 = (XTree)foldConstMinusIntFloat15.getTree();
+
+					if ( state.backtracking==1 ) {
+					retval.tree = _first_0;
+					if ( adaptor.getParent(retval.tree)!=null && adaptor.isNil( adaptor.getParent(retval.tree) ) )
+						retval.tree = (XTree)adaptor.getParent(retval.tree);
+					}
+
+					}
+					break;
+				case 16 :
+					// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:83:96: foldConstMultIntFloat
+					{
+					_last = (XTree)input.LT(1);
+					pushFollow(FOLLOW_foldConstMultIntFloat_in_bottomup132);
+					foldConstMultIntFloat16=foldConstMultIntFloat();
+					state._fsp--;
+					if (state.failed) return retval;
+					if ( state.backtracking==1 ) 
+					 
+					if ( _first_0==null ) _first_0 = (XTree)foldConstMultIntFloat16.getTree();
+
+					if ( state.backtracking==1 ) {
+					retval.tree = _first_0;
+					if ( adaptor.getParent(retval.tree)!=null && adaptor.isNil( adaptor.getParent(retval.tree) ) )
+						retval.tree = (XTree)adaptor.getParent(retval.tree);
+					}
+
+					}
+					break;
+				case 17 :
+					// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:83:120: foldConstDivIntFloat
+					{
+					_last = (XTree)input.LT(1);
+					pushFollow(FOLLOW_foldConstDivIntFloat_in_bottomup136);
+					foldConstDivIntFloat17=foldConstDivIntFloat();
+					state._fsp--;
+					if (state.failed) return retval;
+					if ( state.backtracking==1 ) 
+					 
+					if ( _first_0==null ) _first_0 = (XTree)foldConstDivIntFloat17.getTree();
+
+					if ( state.backtracking==1 ) {
+					retval.tree = _first_0;
+					if ( adaptor.getParent(retval.tree)!=null && adaptor.isNil( adaptor.getParent(retval.tree) ) )
+						retval.tree = (XTree)adaptor.getParent(retval.tree);
+					}
+
+					}
+					break;
+				case 18 :
+					// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:83:143: foldMultZero
+					{
+					_last = (XTree)input.LT(1);
+					pushFollow(FOLLOW_foldMultZero_in_bottomup140);
+					foldMultZero18=foldMultZero();
+					state._fsp--;
+					if (state.failed) return retval;
+					if ( state.backtracking==1 ) 
+					 
+					if ( _first_0==null ) _first_0 = (XTree)foldMultZero18.getTree();
+
+					if ( state.backtracking==1 ) {
+					retval.tree = _first_0;
+					if ( adaptor.getParent(retval.tree)!=null && adaptor.isNil( adaptor.getParent(retval.tree) ) )
+						retval.tree = (XTree)adaptor.getParent(retval.tree);
+					}
+
+					}
+					break;
 
 			}
 		}
@@ -766,12 +966,12 @@ public class XOptimizer extends TreeRewriter {
 
 
 		XTree x=null;
-		XTree UMINUS14=null;
-		XTree UMINUS15=null;
+		XTree UMINUS19=null;
+		XTree UMINUS20=null;
 
 		XTree x_tree=null;
-		XTree UMINUS14_tree=null;
-		XTree UMINUS15_tree=null;
+		XTree UMINUS19_tree=null;
+		XTree UMINUS20_tree=null;
 		RewriteRuleNodeStream stream_UMINUS=new RewriteRuleNodeStream(adaptor,"token UMINUS");
 		RewriteRuleNodeStream stream_FLOATCONST=new RewriteRuleNodeStream(adaptor,"token FLOATCONST");
 		RewriteRuleNodeStream stream_INTCONST=new RewriteRuleNodeStream(adaptor,"token INTCONST");
@@ -839,15 +1039,15 @@ public class XOptimizer extends TreeRewriter {
 					XTree _save_last_1 = _last;
 					XTree _first_1 = null;
 					_last = (XTree)input.LT(1);
-					UMINUS14=(XTree)match(input,UMINUS,FOLLOW_UMINUS_in_uminus138); if (state.failed) return retval;
+					UMINUS19=(XTree)match(input,UMINUS,FOLLOW_UMINUS_in_uminus156); if (state.failed) return retval;
 					 
-					if ( state.backtracking==1 ) stream_UMINUS.add(UMINUS14);
+					if ( state.backtracking==1 ) stream_UMINUS.add(UMINUS19);
 
 					if ( state.backtracking==1 )
-					if ( _first_0==null ) _first_0 = UMINUS14;
+					if ( _first_0==null ) _first_0 = UMINUS19;
 					match(input, Token.DOWN, null); if (state.failed) return retval;
 					_last = (XTree)input.LT(1);
-					x=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_uminus142); if (state.failed) return retval;
+					x=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_uminus160); if (state.failed) return retval;
 					 
 					if ( state.backtracking==1 ) stream_INTCONST.add(x);
 
@@ -891,15 +1091,15 @@ public class XOptimizer extends TreeRewriter {
 					XTree _save_last_1 = _last;
 					XTree _first_1 = null;
 					_last = (XTree)input.LT(1);
-					UMINUS15=(XTree)match(input,UMINUS,FOLLOW_UMINUS_in_uminus155); if (state.failed) return retval;
+					UMINUS20=(XTree)match(input,UMINUS,FOLLOW_UMINUS_in_uminus173); if (state.failed) return retval;
 					 
-					if ( state.backtracking==1 ) stream_UMINUS.add(UMINUS15);
+					if ( state.backtracking==1 ) stream_UMINUS.add(UMINUS20);
 
 					if ( state.backtracking==1 )
-					if ( _first_0==null ) _first_0 = UMINUS15;
+					if ( _first_0==null ) _first_0 = UMINUS20;
 					match(input, Token.DOWN, null); if (state.failed) return retval;
 					_last = (XTree)input.LT(1);
-					x=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_uminus159); if (state.failed) return retval;
+					x=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_uminus177); if (state.failed) return retval;
 					 
 					if ( state.backtracking==1 ) stream_FLOATCONST.add(x);
 
@@ -971,14 +1171,14 @@ public class XOptimizer extends TreeRewriter {
 
 		XTree x=null;
 		XTree op=null;
-		XTree char_literal16=null;
-		XTree char_literal17=null;
+		XTree char_literal21=null;
+		XTree char_literal22=null;
 		XTree y=null;
 
 		XTree x_tree=null;
 		XTree op_tree=null;
-		XTree char_literal16_tree=null;
-		XTree char_literal17_tree=null;
+		XTree char_literal21_tree=null;
+		XTree char_literal22_tree=null;
 		XTree y_tree=null;
 		RewriteRuleNodeStream stream_22=new RewriteRuleNodeStream(adaptor,"token 22");
 		RewriteRuleNodeStream stream_23=new RewriteRuleNodeStream(adaptor,"token 23");
@@ -1050,15 +1250,15 @@ public class XOptimizer extends TreeRewriter {
 					XTree _save_last_1 = _last;
 					XTree _first_1 = null;
 					_last = (XTree)input.LT(1);
-					char_literal16=(XTree)match(input,22,FOLLOW_22_in_multZeroOne173); if (state.failed) return retval;
+					char_literal21=(XTree)match(input,22,FOLLOW_22_in_multZeroOne191); if (state.failed) return retval;
 					 
-					if ( state.backtracking==1 ) stream_22.add(char_literal16);
+					if ( state.backtracking==1 ) stream_22.add(char_literal21);
 
 					if ( state.backtracking==1 )
-					if ( _first_0==null ) _first_0 = char_literal16;
+					if ( _first_0==null ) _first_0 = char_literal21;
 					match(input, Token.DOWN, null); if (state.failed) return retval;
 					_last = (XTree)input.LT(1);
-					x=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_multZeroOne177); if (state.failed) return retval;
+					x=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_multZeroOne195); if (state.failed) return retval;
 					 
 					if ( state.backtracking==1 ) stream_INTCONST.add(x);
 
@@ -1109,7 +1309,7 @@ public class XOptimizer extends TreeRewriter {
 							// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:91:70: '+'
 							{
 							_last = (XTree)input.LT(1);
-							op=(XTree)match(input,23,FOLLOW_23_in_multZeroOne186); if (state.failed) return retval;
+							op=(XTree)match(input,23,FOLLOW_23_in_multZeroOne204); if (state.failed) return retval;
 							 
 							if ( state.backtracking==1 ) stream_23.add(op);
 
@@ -1125,7 +1325,7 @@ public class XOptimizer extends TreeRewriter {
 							// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:91:76: '-'
 							{
 							_last = (XTree)input.LT(1);
-							op=(XTree)match(input,24,FOLLOW_24_in_multZeroOne190); if (state.failed) return retval;
+							op=(XTree)match(input,24,FOLLOW_24_in_multZeroOne208); if (state.failed) return retval;
 							 
 							if ( state.backtracking==1 ) stream_24.add(op);
 
@@ -1141,7 +1341,7 @@ public class XOptimizer extends TreeRewriter {
 							// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:91:82: '*'
 							{
 							_last = (XTree)input.LT(1);
-							op=(XTree)match(input,22,FOLLOW_22_in_multZeroOne194); if (state.failed) return retval;
+							op=(XTree)match(input,22,FOLLOW_22_in_multZeroOne212); if (state.failed) return retval;
 							 
 							if ( state.backtracking==1 ) stream_22.add(op);
 
@@ -1157,7 +1357,7 @@ public class XOptimizer extends TreeRewriter {
 							// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:91:88: '/'
 							{
 							_last = (XTree)input.LT(1);
-							op=(XTree)match(input,26,FOLLOW_26_in_multZeroOne198); if (state.failed) return retval;
+							op=(XTree)match(input,26,FOLLOW_26_in_multZeroOne216); if (state.failed) return retval;
 							 
 							if ( state.backtracking==1 ) stream_26.add(op);
 
@@ -1173,7 +1373,7 @@ public class XOptimizer extends TreeRewriter {
 							// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:91:94: ID
 							{
 							_last = (XTree)input.LT(1);
-							op=(XTree)match(input,ID,FOLLOW_ID_in_multZeroOne202); if (state.failed) return retval;
+							op=(XTree)match(input,ID,FOLLOW_ID_in_multZeroOne220); if (state.failed) return retval;
 							 
 							if ( state.backtracking==1 ) stream_ID.add(op);
 
@@ -1237,7 +1437,7 @@ public class XOptimizer extends TreeRewriter {
 
 
 					// AST REWRITE
-					// elements: x, y, op
+					// elements: y, x, op
 					// token labels: op, x
 					// rule labels: retval
 					// token list labels: 
@@ -1291,12 +1491,12 @@ public class XOptimizer extends TreeRewriter {
 					XTree _save_last_1 = _last;
 					XTree _first_1 = null;
 					_last = (XTree)input.LT(1);
-					char_literal17=(XTree)match(input,22,FOLLOW_22_in_multZeroOne241); if (state.failed) return retval;
+					char_literal22=(XTree)match(input,22,FOLLOW_22_in_multZeroOne259); if (state.failed) return retval;
 					 
-					if ( state.backtracking==1 ) stream_22.add(char_literal17);
+					if ( state.backtracking==1 ) stream_22.add(char_literal22);
 
 					if ( state.backtracking==1 )
-					if ( _first_0==null ) _first_0 = char_literal17;
+					if ( _first_0==null ) _first_0 = char_literal22;
 					match(input, Token.DOWN, null); if (state.failed) return retval;
 					_last = (XTree)input.LT(1);
 					{
@@ -1341,7 +1541,7 @@ public class XOptimizer extends TreeRewriter {
 							// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:94:15: '+'
 							{
 							_last = (XTree)input.LT(1);
-							op=(XTree)match(input,23,FOLLOW_23_in_multZeroOne247); if (state.failed) return retval;
+							op=(XTree)match(input,23,FOLLOW_23_in_multZeroOne265); if (state.failed) return retval;
 							 
 							if ( state.backtracking==1 ) stream_23.add(op);
 
@@ -1357,7 +1557,7 @@ public class XOptimizer extends TreeRewriter {
 							// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:94:21: '-'
 							{
 							_last = (XTree)input.LT(1);
-							op=(XTree)match(input,24,FOLLOW_24_in_multZeroOne251); if (state.failed) return retval;
+							op=(XTree)match(input,24,FOLLOW_24_in_multZeroOne269); if (state.failed) return retval;
 							 
 							if ( state.backtracking==1 ) stream_24.add(op);
 
@@ -1373,7 +1573,7 @@ public class XOptimizer extends TreeRewriter {
 							// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:94:27: '*'
 							{
 							_last = (XTree)input.LT(1);
-							op=(XTree)match(input,22,FOLLOW_22_in_multZeroOne255); if (state.failed) return retval;
+							op=(XTree)match(input,22,FOLLOW_22_in_multZeroOne273); if (state.failed) return retval;
 							 
 							if ( state.backtracking==1 ) stream_22.add(op);
 
@@ -1389,7 +1589,7 @@ public class XOptimizer extends TreeRewriter {
 							// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:94:33: '/'
 							{
 							_last = (XTree)input.LT(1);
-							op=(XTree)match(input,26,FOLLOW_26_in_multZeroOne259); if (state.failed) return retval;
+							op=(XTree)match(input,26,FOLLOW_26_in_multZeroOne277); if (state.failed) return retval;
 							 
 							if ( state.backtracking==1 ) stream_26.add(op);
 
@@ -1405,7 +1605,7 @@ public class XOptimizer extends TreeRewriter {
 							// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:94:39: ID
 							{
 							_last = (XTree)input.LT(1);
-							op=(XTree)match(input,ID,FOLLOW_ID_in_multZeroOne263); if (state.failed) return retval;
+							op=(XTree)match(input,ID,FOLLOW_ID_in_multZeroOne281); if (state.failed) return retval;
 							 
 							if ( state.backtracking==1 ) stream_ID.add(op);
 
@@ -1464,7 +1664,7 @@ public class XOptimizer extends TreeRewriter {
 
 
 					_last = (XTree)input.LT(1);
-					x=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_multZeroOne274); if (state.failed) return retval;
+					x=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_multZeroOne292); if (state.failed) return retval;
 					 
 					if ( state.backtracking==1 ) stream_INTCONST.add(x);
 
@@ -1478,7 +1678,7 @@ public class XOptimizer extends TreeRewriter {
 
 
 					// AST REWRITE
-					// elements: x, y, op
+					// elements: op, x, y
 					// token labels: op, x
 					// rule labels: retval
 					// token list labels: 
@@ -1560,11 +1760,11 @@ public class XOptimizer extends TreeRewriter {
 
 		XTree l=null;
 		XTree r=null;
-		XTree char_literal18=null;
+		XTree char_literal23=null;
 
 		XTree l_tree=null;
 		XTree r_tree=null;
-		XTree char_literal18_tree=null;
+		XTree char_literal23_tree=null;
 		RewriteRuleNodeStream stream_23=new RewriteRuleNodeStream(adaptor,"token 23");
 		RewriteRuleNodeStream stream_INTCONST=new RewriteRuleNodeStream(adaptor,"token INTCONST");
 
@@ -1577,20 +1777,20 @@ public class XOptimizer extends TreeRewriter {
 			XTree _save_last_1 = _last;
 			XTree _first_1 = null;
 			_last = (XTree)input.LT(1);
-			char_literal18=(XTree)match(input,23,FOLLOW_23_in_foldConstAddInt315); if (state.failed) return retval;
+			char_literal23=(XTree)match(input,23,FOLLOW_23_in_foldConstAddInt333); if (state.failed) return retval;
 			 
-			if ( state.backtracking==1 ) stream_23.add(char_literal18);
+			if ( state.backtracking==1 ) stream_23.add(char_literal23);
 
 			if ( state.backtracking==1 )
-			if ( _first_0==null ) _first_0 = char_literal18;
+			if ( _first_0==null ) _first_0 = char_literal23;
 			match(input, Token.DOWN, null); if (state.failed) return retval;
 			_last = (XTree)input.LT(1);
-			l=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstAddInt319); if (state.failed) return retval;
+			l=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstAddInt337); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_INTCONST.add(l);
 
 			_last = (XTree)input.LT(1);
-			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstAddInt323); if (state.failed) return retval;
+			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstAddInt341); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_INTCONST.add(r);
 
@@ -1660,11 +1860,11 @@ public class XOptimizer extends TreeRewriter {
 
 		XTree l=null;
 		XTree r=null;
-		XTree char_literal19=null;
+		XTree char_literal24=null;
 
 		XTree l_tree=null;
 		XTree r_tree=null;
-		XTree char_literal19_tree=null;
+		XTree char_literal24_tree=null;
 		RewriteRuleNodeStream stream_24=new RewriteRuleNodeStream(adaptor,"token 24");
 		RewriteRuleNodeStream stream_INTCONST=new RewriteRuleNodeStream(adaptor,"token INTCONST");
 
@@ -1677,20 +1877,20 @@ public class XOptimizer extends TreeRewriter {
 			XTree _save_last_1 = _last;
 			XTree _first_1 = null;
 			_last = (XTree)input.LT(1);
-			char_literal19=(XTree)match(input,24,FOLLOW_24_in_foldConstMinusInt341); if (state.failed) return retval;
+			char_literal24=(XTree)match(input,24,FOLLOW_24_in_foldConstMinusInt359); if (state.failed) return retval;
 			 
-			if ( state.backtracking==1 ) stream_24.add(char_literal19);
+			if ( state.backtracking==1 ) stream_24.add(char_literal24);
 
 			if ( state.backtracking==1 )
-			if ( _first_0==null ) _first_0 = char_literal19;
+			if ( _first_0==null ) _first_0 = char_literal24;
 			match(input, Token.DOWN, null); if (state.failed) return retval;
 			_last = (XTree)input.LT(1);
-			l=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstMinusInt345); if (state.failed) return retval;
+			l=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstMinusInt363); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_INTCONST.add(l);
 
 			_last = (XTree)input.LT(1);
-			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstMinusInt349); if (state.failed) return retval;
+			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstMinusInt367); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_INTCONST.add(r);
 
@@ -1760,11 +1960,11 @@ public class XOptimizer extends TreeRewriter {
 
 		XTree l=null;
 		XTree r=null;
-		XTree char_literal20=null;
+		XTree char_literal25=null;
 
 		XTree l_tree=null;
 		XTree r_tree=null;
-		XTree char_literal20_tree=null;
+		XTree char_literal25_tree=null;
 		RewriteRuleNodeStream stream_22=new RewriteRuleNodeStream(adaptor,"token 22");
 		RewriteRuleNodeStream stream_INTCONST=new RewriteRuleNodeStream(adaptor,"token INTCONST");
 
@@ -1777,20 +1977,20 @@ public class XOptimizer extends TreeRewriter {
 			XTree _save_last_1 = _last;
 			XTree _first_1 = null;
 			_last = (XTree)input.LT(1);
-			char_literal20=(XTree)match(input,22,FOLLOW_22_in_foldConstMultInt367); if (state.failed) return retval;
+			char_literal25=(XTree)match(input,22,FOLLOW_22_in_foldConstMultInt385); if (state.failed) return retval;
 			 
-			if ( state.backtracking==1 ) stream_22.add(char_literal20);
+			if ( state.backtracking==1 ) stream_22.add(char_literal25);
 
 			if ( state.backtracking==1 )
-			if ( _first_0==null ) _first_0 = char_literal20;
+			if ( _first_0==null ) _first_0 = char_literal25;
 			match(input, Token.DOWN, null); if (state.failed) return retval;
 			_last = (XTree)input.LT(1);
-			l=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstMultInt371); if (state.failed) return retval;
+			l=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstMultInt389); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_INTCONST.add(l);
 
 			_last = (XTree)input.LT(1);
-			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstMultInt375); if (state.failed) return retval;
+			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstMultInt393); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_INTCONST.add(r);
 
@@ -1860,11 +2060,11 @@ public class XOptimizer extends TreeRewriter {
 
 		XTree l=null;
 		XTree r=null;
-		XTree char_literal21=null;
+		XTree char_literal26=null;
 
 		XTree l_tree=null;
 		XTree r_tree=null;
-		XTree char_literal21_tree=null;
+		XTree char_literal26_tree=null;
 		RewriteRuleNodeStream stream_26=new RewriteRuleNodeStream(adaptor,"token 26");
 		RewriteRuleNodeStream stream_INTCONST=new RewriteRuleNodeStream(adaptor,"token INTCONST");
 
@@ -1877,20 +2077,20 @@ public class XOptimizer extends TreeRewriter {
 			XTree _save_last_1 = _last;
 			XTree _first_1 = null;
 			_last = (XTree)input.LT(1);
-			char_literal21=(XTree)match(input,26,FOLLOW_26_in_foldConstDivInt393); if (state.failed) return retval;
+			char_literal26=(XTree)match(input,26,FOLLOW_26_in_foldConstDivInt411); if (state.failed) return retval;
 			 
-			if ( state.backtracking==1 ) stream_26.add(char_literal21);
+			if ( state.backtracking==1 ) stream_26.add(char_literal26);
 
 			if ( state.backtracking==1 )
-			if ( _first_0==null ) _first_0 = char_literal21;
+			if ( _first_0==null ) _first_0 = char_literal26;
 			match(input, Token.DOWN, null); if (state.failed) return retval;
 			_last = (XTree)input.LT(1);
-			l=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstDivInt397); if (state.failed) return retval;
+			l=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstDivInt415); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_INTCONST.add(l);
 
 			_last = (XTree)input.LT(1);
-			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstDivInt401); if (state.failed) return retval;
+			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstDivInt419); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_INTCONST.add(r);
 
@@ -1960,11 +2160,11 @@ public class XOptimizer extends TreeRewriter {
 
 		XTree l=null;
 		XTree r=null;
-		XTree char_literal22=null;
+		XTree char_literal27=null;
 
 		XTree l_tree=null;
 		XTree r_tree=null;
-		XTree char_literal22_tree=null;
+		XTree char_literal27_tree=null;
 		RewriteRuleNodeStream stream_23=new RewriteRuleNodeStream(adaptor,"token 23");
 		RewriteRuleNodeStream stream_FLOATCONST=new RewriteRuleNodeStream(adaptor,"token FLOATCONST");
 
@@ -1977,20 +2177,20 @@ public class XOptimizer extends TreeRewriter {
 			XTree _save_last_1 = _last;
 			XTree _first_1 = null;
 			_last = (XTree)input.LT(1);
-			char_literal22=(XTree)match(input,23,FOLLOW_23_in_foldConstAddFloat419); if (state.failed) return retval;
+			char_literal27=(XTree)match(input,23,FOLLOW_23_in_foldConstAddFloat437); if (state.failed) return retval;
 			 
-			if ( state.backtracking==1 ) stream_23.add(char_literal22);
+			if ( state.backtracking==1 ) stream_23.add(char_literal27);
 
 			if ( state.backtracking==1 )
-			if ( _first_0==null ) _first_0 = char_literal22;
+			if ( _first_0==null ) _first_0 = char_literal27;
 			match(input, Token.DOWN, null); if (state.failed) return retval;
 			_last = (XTree)input.LT(1);
-			l=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstAddFloat423); if (state.failed) return retval;
+			l=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstAddFloat441); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_FLOATCONST.add(l);
 
 			_last = (XTree)input.LT(1);
-			r=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstAddFloat427); if (state.failed) return retval;
+			r=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstAddFloat445); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_FLOATCONST.add(r);
 
@@ -2060,11 +2260,11 @@ public class XOptimizer extends TreeRewriter {
 
 		XTree l=null;
 		XTree r=null;
-		XTree char_literal23=null;
+		XTree char_literal28=null;
 
 		XTree l_tree=null;
 		XTree r_tree=null;
-		XTree char_literal23_tree=null;
+		XTree char_literal28_tree=null;
 		RewriteRuleNodeStream stream_24=new RewriteRuleNodeStream(adaptor,"token 24");
 		RewriteRuleNodeStream stream_FLOATCONST=new RewriteRuleNodeStream(adaptor,"token FLOATCONST");
 
@@ -2077,20 +2277,20 @@ public class XOptimizer extends TreeRewriter {
 			XTree _save_last_1 = _last;
 			XTree _first_1 = null;
 			_last = (XTree)input.LT(1);
-			char_literal23=(XTree)match(input,24,FOLLOW_24_in_foldConstMinusFloat445); if (state.failed) return retval;
+			char_literal28=(XTree)match(input,24,FOLLOW_24_in_foldConstMinusFloat463); if (state.failed) return retval;
 			 
-			if ( state.backtracking==1 ) stream_24.add(char_literal23);
+			if ( state.backtracking==1 ) stream_24.add(char_literal28);
 
 			if ( state.backtracking==1 )
-			if ( _first_0==null ) _first_0 = char_literal23;
+			if ( _first_0==null ) _first_0 = char_literal28;
 			match(input, Token.DOWN, null); if (state.failed) return retval;
 			_last = (XTree)input.LT(1);
-			l=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstMinusFloat449); if (state.failed) return retval;
+			l=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstMinusFloat467); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_FLOATCONST.add(l);
 
 			_last = (XTree)input.LT(1);
-			r=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstMinusFloat453); if (state.failed) return retval;
+			r=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstMinusFloat471); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_FLOATCONST.add(r);
 
@@ -2160,11 +2360,11 @@ public class XOptimizer extends TreeRewriter {
 
 		XTree l=null;
 		XTree r=null;
-		XTree char_literal24=null;
+		XTree char_literal29=null;
 
 		XTree l_tree=null;
 		XTree r_tree=null;
-		XTree char_literal24_tree=null;
+		XTree char_literal29_tree=null;
 		RewriteRuleNodeStream stream_22=new RewriteRuleNodeStream(adaptor,"token 22");
 		RewriteRuleNodeStream stream_FLOATCONST=new RewriteRuleNodeStream(adaptor,"token FLOATCONST");
 
@@ -2177,20 +2377,20 @@ public class XOptimizer extends TreeRewriter {
 			XTree _save_last_1 = _last;
 			XTree _first_1 = null;
 			_last = (XTree)input.LT(1);
-			char_literal24=(XTree)match(input,22,FOLLOW_22_in_foldConstMultFloat471); if (state.failed) return retval;
+			char_literal29=(XTree)match(input,22,FOLLOW_22_in_foldConstMultFloat489); if (state.failed) return retval;
 			 
-			if ( state.backtracking==1 ) stream_22.add(char_literal24);
+			if ( state.backtracking==1 ) stream_22.add(char_literal29);
 
 			if ( state.backtracking==1 )
-			if ( _first_0==null ) _first_0 = char_literal24;
+			if ( _first_0==null ) _first_0 = char_literal29;
 			match(input, Token.DOWN, null); if (state.failed) return retval;
 			_last = (XTree)input.LT(1);
-			l=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstMultFloat475); if (state.failed) return retval;
+			l=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstMultFloat493); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_FLOATCONST.add(l);
 
 			_last = (XTree)input.LT(1);
-			r=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstMultFloat479); if (state.failed) return retval;
+			r=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstMultFloat497); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_FLOATCONST.add(r);
 
@@ -2260,11 +2460,11 @@ public class XOptimizer extends TreeRewriter {
 
 		XTree l=null;
 		XTree r=null;
-		XTree char_literal25=null;
+		XTree char_literal30=null;
 
 		XTree l_tree=null;
 		XTree r_tree=null;
-		XTree char_literal25_tree=null;
+		XTree char_literal30_tree=null;
 		RewriteRuleNodeStream stream_FLOATCONST=new RewriteRuleNodeStream(adaptor,"token FLOATCONST");
 		RewriteRuleNodeStream stream_26=new RewriteRuleNodeStream(adaptor,"token 26");
 
@@ -2277,20 +2477,20 @@ public class XOptimizer extends TreeRewriter {
 			XTree _save_last_1 = _last;
 			XTree _first_1 = null;
 			_last = (XTree)input.LT(1);
-			char_literal25=(XTree)match(input,26,FOLLOW_26_in_foldConstDivFloat497); if (state.failed) return retval;
+			char_literal30=(XTree)match(input,26,FOLLOW_26_in_foldConstDivFloat515); if (state.failed) return retval;
 			 
-			if ( state.backtracking==1 ) stream_26.add(char_literal25);
+			if ( state.backtracking==1 ) stream_26.add(char_literal30);
 
 			if ( state.backtracking==1 )
-			if ( _first_0==null ) _first_0 = char_literal25;
+			if ( _first_0==null ) _first_0 = char_literal30;
 			match(input, Token.DOWN, null); if (state.failed) return retval;
 			_last = (XTree)input.LT(1);
-			l=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstDivFloat501); if (state.failed) return retval;
+			l=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstDivFloat519); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_FLOATCONST.add(l);
 
 			_last = (XTree)input.LT(1);
-			r=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstDivFloat505); if (state.failed) return retval;
+			r=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstDivFloat523); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_FLOATCONST.add(r);
 
@@ -2360,11 +2560,11 @@ public class XOptimizer extends TreeRewriter {
 
 		XTree l=null;
 		XTree r=null;
-		XTree char_literal26=null;
+		XTree char_literal31=null;
 
 		XTree l_tree=null;
 		XTree r_tree=null;
-		XTree char_literal26_tree=null;
+		XTree char_literal31_tree=null;
 		RewriteRuleNodeStream stream_23=new RewriteRuleNodeStream(adaptor,"token 23");
 		RewriteRuleNodeStream stream_FLOATCONST=new RewriteRuleNodeStream(adaptor,"token FLOATCONST");
 		RewriteRuleNodeStream stream_INTCONST=new RewriteRuleNodeStream(adaptor,"token INTCONST");
@@ -2378,20 +2578,20 @@ public class XOptimizer extends TreeRewriter {
 			XTree _save_last_1 = _last;
 			XTree _first_1 = null;
 			_last = (XTree)input.LT(1);
-			char_literal26=(XTree)match(input,23,FOLLOW_23_in_foldConstAddFloatInt523); if (state.failed) return retval;
+			char_literal31=(XTree)match(input,23,FOLLOW_23_in_foldConstAddFloatInt541); if (state.failed) return retval;
 			 
-			if ( state.backtracking==1 ) stream_23.add(char_literal26);
+			if ( state.backtracking==1 ) stream_23.add(char_literal31);
 
 			if ( state.backtracking==1 )
-			if ( _first_0==null ) _first_0 = char_literal26;
+			if ( _first_0==null ) _first_0 = char_literal31;
 			match(input, Token.DOWN, null); if (state.failed) return retval;
 			_last = (XTree)input.LT(1);
-			l=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstAddFloatInt527); if (state.failed) return retval;
+			l=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstAddFloatInt545); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_FLOATCONST.add(l);
 
 			_last = (XTree)input.LT(1);
-			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstAddFloatInt531); if (state.failed) return retval;
+			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstAddFloatInt549); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_INTCONST.add(r);
 
@@ -2461,11 +2661,11 @@ public class XOptimizer extends TreeRewriter {
 
 		XTree l=null;
 		XTree r=null;
-		XTree char_literal27=null;
+		XTree char_literal32=null;
 
 		XTree l_tree=null;
 		XTree r_tree=null;
-		XTree char_literal27_tree=null;
+		XTree char_literal32_tree=null;
 		RewriteRuleNodeStream stream_24=new RewriteRuleNodeStream(adaptor,"token 24");
 		RewriteRuleNodeStream stream_FLOATCONST=new RewriteRuleNodeStream(adaptor,"token FLOATCONST");
 		RewriteRuleNodeStream stream_INTCONST=new RewriteRuleNodeStream(adaptor,"token INTCONST");
@@ -2479,20 +2679,20 @@ public class XOptimizer extends TreeRewriter {
 			XTree _save_last_1 = _last;
 			XTree _first_1 = null;
 			_last = (XTree)input.LT(1);
-			char_literal27=(XTree)match(input,24,FOLLOW_24_in_foldConstMinusFloatInt549); if (state.failed) return retval;
+			char_literal32=(XTree)match(input,24,FOLLOW_24_in_foldConstMinusFloatInt567); if (state.failed) return retval;
 			 
-			if ( state.backtracking==1 ) stream_24.add(char_literal27);
+			if ( state.backtracking==1 ) stream_24.add(char_literal32);
 
 			if ( state.backtracking==1 )
-			if ( _first_0==null ) _first_0 = char_literal27;
+			if ( _first_0==null ) _first_0 = char_literal32;
 			match(input, Token.DOWN, null); if (state.failed) return retval;
 			_last = (XTree)input.LT(1);
-			l=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstMinusFloatInt553); if (state.failed) return retval;
+			l=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstMinusFloatInt571); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_FLOATCONST.add(l);
 
 			_last = (XTree)input.LT(1);
-			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstMinusFloatInt557); if (state.failed) return retval;
+			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstMinusFloatInt575); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_INTCONST.add(r);
 
@@ -2562,11 +2762,11 @@ public class XOptimizer extends TreeRewriter {
 
 		XTree l=null;
 		XTree r=null;
-		XTree char_literal28=null;
+		XTree char_literal33=null;
 
 		XTree l_tree=null;
 		XTree r_tree=null;
-		XTree char_literal28_tree=null;
+		XTree char_literal33_tree=null;
 		RewriteRuleNodeStream stream_22=new RewriteRuleNodeStream(adaptor,"token 22");
 		RewriteRuleNodeStream stream_FLOATCONST=new RewriteRuleNodeStream(adaptor,"token FLOATCONST");
 		RewriteRuleNodeStream stream_INTCONST=new RewriteRuleNodeStream(adaptor,"token INTCONST");
@@ -2580,20 +2780,20 @@ public class XOptimizer extends TreeRewriter {
 			XTree _save_last_1 = _last;
 			XTree _first_1 = null;
 			_last = (XTree)input.LT(1);
-			char_literal28=(XTree)match(input,22,FOLLOW_22_in_foldConstMultFloatInt575); if (state.failed) return retval;
+			char_literal33=(XTree)match(input,22,FOLLOW_22_in_foldConstMultFloatInt593); if (state.failed) return retval;
 			 
-			if ( state.backtracking==1 ) stream_22.add(char_literal28);
+			if ( state.backtracking==1 ) stream_22.add(char_literal33);
 
 			if ( state.backtracking==1 )
-			if ( _first_0==null ) _first_0 = char_literal28;
+			if ( _first_0==null ) _first_0 = char_literal33;
 			match(input, Token.DOWN, null); if (state.failed) return retval;
 			_last = (XTree)input.LT(1);
-			l=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstMultFloatInt579); if (state.failed) return retval;
+			l=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstMultFloatInt597); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_FLOATCONST.add(l);
 
 			_last = (XTree)input.LT(1);
-			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstMultFloatInt583); if (state.failed) return retval;
+			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstMultFloatInt601); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_INTCONST.add(r);
 
@@ -2663,11 +2863,11 @@ public class XOptimizer extends TreeRewriter {
 
 		XTree l=null;
 		XTree r=null;
-		XTree char_literal29=null;
+		XTree char_literal34=null;
 
 		XTree l_tree=null;
 		XTree r_tree=null;
-		XTree char_literal29_tree=null;
+		XTree char_literal34_tree=null;
 		RewriteRuleNodeStream stream_FLOATCONST=new RewriteRuleNodeStream(adaptor,"token FLOATCONST");
 		RewriteRuleNodeStream stream_26=new RewriteRuleNodeStream(adaptor,"token 26");
 		RewriteRuleNodeStream stream_INTCONST=new RewriteRuleNodeStream(adaptor,"token INTCONST");
@@ -2681,20 +2881,20 @@ public class XOptimizer extends TreeRewriter {
 			XTree _save_last_1 = _last;
 			XTree _first_1 = null;
 			_last = (XTree)input.LT(1);
-			char_literal29=(XTree)match(input,26,FOLLOW_26_in_foldConstDivFloatInt601); if (state.failed) return retval;
+			char_literal34=(XTree)match(input,26,FOLLOW_26_in_foldConstDivFloatInt619); if (state.failed) return retval;
 			 
-			if ( state.backtracking==1 ) stream_26.add(char_literal29);
+			if ( state.backtracking==1 ) stream_26.add(char_literal34);
 
 			if ( state.backtracking==1 )
-			if ( _first_0==null ) _first_0 = char_literal29;
+			if ( _first_0==null ) _first_0 = char_literal34;
 			match(input, Token.DOWN, null); if (state.failed) return retval;
 			_last = (XTree)input.LT(1);
-			l=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstDivFloatInt605); if (state.failed) return retval;
+			l=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstDivFloatInt623); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_FLOATCONST.add(l);
 
 			_last = (XTree)input.LT(1);
-			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstDivFloatInt609); if (state.failed) return retval;
+			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstDivFloatInt627); if (state.failed) return retval;
 			 
 			if ( state.backtracking==1 ) stream_INTCONST.add(r);
 
@@ -2742,6 +2942,515 @@ public class XOptimizer extends TreeRewriter {
 	}
 	// $ANTLR end "foldConstDivFloatInt"
 
+
+	public static class foldConstAddIntFloat_return extends TreeRuleReturnScope {
+		XTree tree;
+		@Override
+		public XTree getTree() { return tree; }
+	};
+
+
+	// $ANTLR start "foldConstAddIntFloat"
+	// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:135:1: foldConstAddIntFloat : ^( '+' l= INTCONST r= FLOATCONST ) -> FLOATCONST[opFloat($l.text, $r.text, '+')] ;
+	public final XOptimizer.foldConstAddIntFloat_return foldConstAddIntFloat() throws RecognitionException {
+		XOptimizer.foldConstAddIntFloat_return retval = new XOptimizer.foldConstAddIntFloat_return();
+		retval.start = input.LT(1);
+
+		XTree root_0 = null;
+
+		XTree _first_0 = null;
+		XTree _last = null;
+
+
+		XTree l=null;
+		XTree r=null;
+		XTree char_literal35=null;
+
+		XTree l_tree=null;
+		XTree r_tree=null;
+		XTree char_literal35_tree=null;
+		RewriteRuleNodeStream stream_23=new RewriteRuleNodeStream(adaptor,"token 23");
+		RewriteRuleNodeStream stream_FLOATCONST=new RewriteRuleNodeStream(adaptor,"token FLOATCONST");
+		RewriteRuleNodeStream stream_INTCONST=new RewriteRuleNodeStream(adaptor,"token INTCONST");
+
+		try {
+			// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:135:21: ( ^( '+' l= INTCONST r= FLOATCONST ) -> FLOATCONST[opFloat($l.text, $r.text, '+')] )
+			// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:136:5: ^( '+' l= INTCONST r= FLOATCONST )
+			{
+			_last = (XTree)input.LT(1);
+			{
+			XTree _save_last_1 = _last;
+			XTree _first_1 = null;
+			_last = (XTree)input.LT(1);
+			char_literal35=(XTree)match(input,23,FOLLOW_23_in_foldConstAddIntFloat645); if (state.failed) return retval;
+			 
+			if ( state.backtracking==1 ) stream_23.add(char_literal35);
+
+			if ( state.backtracking==1 )
+			if ( _first_0==null ) _first_0 = char_literal35;
+			match(input, Token.DOWN, null); if (state.failed) return retval;
+			_last = (XTree)input.LT(1);
+			l=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstAddIntFloat649); if (state.failed) return retval;
+			 
+			if ( state.backtracking==1 ) stream_INTCONST.add(l);
+
+			_last = (XTree)input.LT(1);
+			r=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstAddIntFloat653); if (state.failed) return retval;
+			 
+			if ( state.backtracking==1 ) stream_FLOATCONST.add(r);
+
+			match(input, Token.UP, null); if (state.failed) return retval;
+			_last = _save_last_1;
+			}
+
+
+			// AST REWRITE
+			// elements: FLOATCONST
+			// token labels: 
+			// rule labels: retval
+			// token list labels: 
+			// rule list labels: 
+			// wildcard labels: 
+			if ( state.backtracking==1 ) {
+			retval.tree = root_0;
+			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+			root_0 = (XTree)adaptor.nil();
+			// 136:36: -> FLOATCONST[opFloat($l.text, $r.text, '+')]
+			{
+				adaptor.addChild(root_0, (XTree)adaptor.create(FLOATCONST, opFloat((l!=null?l.getText():null), (r!=null?r.getText():null), '+')));
+			}
+
+
+			retval.tree = (XTree)adaptor.rulePostProcessing(root_0);
+			input.replaceChildren(adaptor.getParent(retval.start),
+								  adaptor.getChildIndex(retval.start),
+								  adaptor.getChildIndex(_last),
+								  retval.tree);
+			}
+
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return retval;
+	}
+	// $ANTLR end "foldConstAddIntFloat"
+
+
+	public static class foldConstMinusIntFloat_return extends TreeRuleReturnScope {
+		XTree tree;
+		@Override
+		public XTree getTree() { return tree; }
+	};
+
+
+	// $ANTLR start "foldConstMinusIntFloat"
+	// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:138:1: foldConstMinusIntFloat : ^( '-' l= INTCONST r= FLOATCONST ) -> FLOATCONST[opFloat($l.text, $r.text, '-')] ;
+	public final XOptimizer.foldConstMinusIntFloat_return foldConstMinusIntFloat() throws RecognitionException {
+		XOptimizer.foldConstMinusIntFloat_return retval = new XOptimizer.foldConstMinusIntFloat_return();
+		retval.start = input.LT(1);
+
+		XTree root_0 = null;
+
+		XTree _first_0 = null;
+		XTree _last = null;
+
+
+		XTree l=null;
+		XTree r=null;
+		XTree char_literal36=null;
+
+		XTree l_tree=null;
+		XTree r_tree=null;
+		XTree char_literal36_tree=null;
+		RewriteRuleNodeStream stream_24=new RewriteRuleNodeStream(adaptor,"token 24");
+		RewriteRuleNodeStream stream_FLOATCONST=new RewriteRuleNodeStream(adaptor,"token FLOATCONST");
+		RewriteRuleNodeStream stream_INTCONST=new RewriteRuleNodeStream(adaptor,"token INTCONST");
+
+		try {
+			// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:138:23: ( ^( '-' l= INTCONST r= FLOATCONST ) -> FLOATCONST[opFloat($l.text, $r.text, '-')] )
+			// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:139:5: ^( '-' l= INTCONST r= FLOATCONST )
+			{
+			_last = (XTree)input.LT(1);
+			{
+			XTree _save_last_1 = _last;
+			XTree _first_1 = null;
+			_last = (XTree)input.LT(1);
+			char_literal36=(XTree)match(input,24,FOLLOW_24_in_foldConstMinusIntFloat671); if (state.failed) return retval;
+			 
+			if ( state.backtracking==1 ) stream_24.add(char_literal36);
+
+			if ( state.backtracking==1 )
+			if ( _first_0==null ) _first_0 = char_literal36;
+			match(input, Token.DOWN, null); if (state.failed) return retval;
+			_last = (XTree)input.LT(1);
+			l=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstMinusIntFloat675); if (state.failed) return retval;
+			 
+			if ( state.backtracking==1 ) stream_INTCONST.add(l);
+
+			_last = (XTree)input.LT(1);
+			r=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstMinusIntFloat679); if (state.failed) return retval;
+			 
+			if ( state.backtracking==1 ) stream_FLOATCONST.add(r);
+
+			match(input, Token.UP, null); if (state.failed) return retval;
+			_last = _save_last_1;
+			}
+
+
+			// AST REWRITE
+			// elements: FLOATCONST
+			// token labels: 
+			// rule labels: retval
+			// token list labels: 
+			// rule list labels: 
+			// wildcard labels: 
+			if ( state.backtracking==1 ) {
+			retval.tree = root_0;
+			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+			root_0 = (XTree)adaptor.nil();
+			// 139:36: -> FLOATCONST[opFloat($l.text, $r.text, '-')]
+			{
+				adaptor.addChild(root_0, (XTree)adaptor.create(FLOATCONST, opFloat((l!=null?l.getText():null), (r!=null?r.getText():null), '-')));
+			}
+
+
+			retval.tree = (XTree)adaptor.rulePostProcessing(root_0);
+			input.replaceChildren(adaptor.getParent(retval.start),
+								  adaptor.getChildIndex(retval.start),
+								  adaptor.getChildIndex(_last),
+								  retval.tree);
+			}
+
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return retval;
+	}
+	// $ANTLR end "foldConstMinusIntFloat"
+
+
+	public static class foldConstMultIntFloat_return extends TreeRuleReturnScope {
+		XTree tree;
+		@Override
+		public XTree getTree() { return tree; }
+	};
+
+
+	// $ANTLR start "foldConstMultIntFloat"
+	// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:141:1: foldConstMultIntFloat : ^( '*' l= INTCONST r= FLOATCONST ) -> FLOATCONST[opFloat($l.text, $r.text, '*')] ;
+	public final XOptimizer.foldConstMultIntFloat_return foldConstMultIntFloat() throws RecognitionException {
+		XOptimizer.foldConstMultIntFloat_return retval = new XOptimizer.foldConstMultIntFloat_return();
+		retval.start = input.LT(1);
+
+		XTree root_0 = null;
+
+		XTree _first_0 = null;
+		XTree _last = null;
+
+
+		XTree l=null;
+		XTree r=null;
+		XTree char_literal37=null;
+
+		XTree l_tree=null;
+		XTree r_tree=null;
+		XTree char_literal37_tree=null;
+		RewriteRuleNodeStream stream_22=new RewriteRuleNodeStream(adaptor,"token 22");
+		RewriteRuleNodeStream stream_FLOATCONST=new RewriteRuleNodeStream(adaptor,"token FLOATCONST");
+		RewriteRuleNodeStream stream_INTCONST=new RewriteRuleNodeStream(adaptor,"token INTCONST");
+
+		try {
+			// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:141:22: ( ^( '*' l= INTCONST r= FLOATCONST ) -> FLOATCONST[opFloat($l.text, $r.text, '*')] )
+			// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:142:5: ^( '*' l= INTCONST r= FLOATCONST )
+			{
+			_last = (XTree)input.LT(1);
+			{
+			XTree _save_last_1 = _last;
+			XTree _first_1 = null;
+			_last = (XTree)input.LT(1);
+			char_literal37=(XTree)match(input,22,FOLLOW_22_in_foldConstMultIntFloat697); if (state.failed) return retval;
+			 
+			if ( state.backtracking==1 ) stream_22.add(char_literal37);
+
+			if ( state.backtracking==1 )
+			if ( _first_0==null ) _first_0 = char_literal37;
+			match(input, Token.DOWN, null); if (state.failed) return retval;
+			_last = (XTree)input.LT(1);
+			l=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstMultIntFloat701); if (state.failed) return retval;
+			 
+			if ( state.backtracking==1 ) stream_INTCONST.add(l);
+
+			_last = (XTree)input.LT(1);
+			r=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstMultIntFloat705); if (state.failed) return retval;
+			 
+			if ( state.backtracking==1 ) stream_FLOATCONST.add(r);
+
+			match(input, Token.UP, null); if (state.failed) return retval;
+			_last = _save_last_1;
+			}
+
+
+			// AST REWRITE
+			// elements: FLOATCONST
+			// token labels: 
+			// rule labels: retval
+			// token list labels: 
+			// rule list labels: 
+			// wildcard labels: 
+			if ( state.backtracking==1 ) {
+			retval.tree = root_0;
+			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+			root_0 = (XTree)adaptor.nil();
+			// 142:36: -> FLOATCONST[opFloat($l.text, $r.text, '*')]
+			{
+				adaptor.addChild(root_0, (XTree)adaptor.create(FLOATCONST, opFloat((l!=null?l.getText():null), (r!=null?r.getText():null), '*')));
+			}
+
+
+			retval.tree = (XTree)adaptor.rulePostProcessing(root_0);
+			input.replaceChildren(adaptor.getParent(retval.start),
+								  adaptor.getChildIndex(retval.start),
+								  adaptor.getChildIndex(_last),
+								  retval.tree);
+			}
+
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return retval;
+	}
+	// $ANTLR end "foldConstMultIntFloat"
+
+
+	public static class foldConstDivIntFloat_return extends TreeRuleReturnScope {
+		XTree tree;
+		@Override
+		public XTree getTree() { return tree; }
+	};
+
+
+	// $ANTLR start "foldConstDivIntFloat"
+	// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:144:1: foldConstDivIntFloat : ^( '/' l= INTCONST r= FLOATCONST ) -> FLOATCONST[opFloat($l.text, $r.text, '/')] ;
+	public final XOptimizer.foldConstDivIntFloat_return foldConstDivIntFloat() throws RecognitionException {
+		XOptimizer.foldConstDivIntFloat_return retval = new XOptimizer.foldConstDivIntFloat_return();
+		retval.start = input.LT(1);
+
+		XTree root_0 = null;
+
+		XTree _first_0 = null;
+		XTree _last = null;
+
+
+		XTree l=null;
+		XTree r=null;
+		XTree char_literal38=null;
+
+		XTree l_tree=null;
+		XTree r_tree=null;
+		XTree char_literal38_tree=null;
+		RewriteRuleNodeStream stream_FLOATCONST=new RewriteRuleNodeStream(adaptor,"token FLOATCONST");
+		RewriteRuleNodeStream stream_26=new RewriteRuleNodeStream(adaptor,"token 26");
+		RewriteRuleNodeStream stream_INTCONST=new RewriteRuleNodeStream(adaptor,"token INTCONST");
+
+		try {
+			// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:144:21: ( ^( '/' l= INTCONST r= FLOATCONST ) -> FLOATCONST[opFloat($l.text, $r.text, '/')] )
+			// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:145:5: ^( '/' l= INTCONST r= FLOATCONST )
+			{
+			_last = (XTree)input.LT(1);
+			{
+			XTree _save_last_1 = _last;
+			XTree _first_1 = null;
+			_last = (XTree)input.LT(1);
+			char_literal38=(XTree)match(input,26,FOLLOW_26_in_foldConstDivIntFloat723); if (state.failed) return retval;
+			 
+			if ( state.backtracking==1 ) stream_26.add(char_literal38);
+
+			if ( state.backtracking==1 )
+			if ( _first_0==null ) _first_0 = char_literal38;
+			match(input, Token.DOWN, null); if (state.failed) return retval;
+			_last = (XTree)input.LT(1);
+			l=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldConstDivIntFloat727); if (state.failed) return retval;
+			 
+			if ( state.backtracking==1 ) stream_INTCONST.add(l);
+
+			_last = (XTree)input.LT(1);
+			r=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_foldConstDivIntFloat731); if (state.failed) return retval;
+			 
+			if ( state.backtracking==1 ) stream_FLOATCONST.add(r);
+
+			match(input, Token.UP, null); if (state.failed) return retval;
+			_last = _save_last_1;
+			}
+
+
+			// AST REWRITE
+			// elements: FLOATCONST
+			// token labels: 
+			// rule labels: retval
+			// token list labels: 
+			// rule list labels: 
+			// wildcard labels: 
+			if ( state.backtracking==1 ) {
+			retval.tree = root_0;
+			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+			root_0 = (XTree)adaptor.nil();
+			// 145:36: -> FLOATCONST[opFloat($l.text, $r.text, '/')]
+			{
+				adaptor.addChild(root_0, (XTree)adaptor.create(FLOATCONST, opFloat((l!=null?l.getText():null), (r!=null?r.getText():null), '/')));
+			}
+
+
+			retval.tree = (XTree)adaptor.rulePostProcessing(root_0);
+			input.replaceChildren(adaptor.getParent(retval.start),
+								  adaptor.getChildIndex(retval.start),
+								  adaptor.getChildIndex(_last),
+								  retval.tree);
+			}
+
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return retval;
+	}
+	// $ANTLR end "foldConstDivIntFloat"
+
+
+	public static class foldMultZero_return extends TreeRuleReturnScope {
+		XTree tree;
+		@Override
+		public XTree getTree() { return tree; }
+	};
+
+
+	// $ANTLR start "foldMultZero"
+	// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:147:1: foldMultZero : ^( '*' l= ID r= INTCONST ) {...}? -> INTCONST[\"0\"] ;
+	public final XOptimizer.foldMultZero_return foldMultZero() throws RecognitionException {
+		XOptimizer.foldMultZero_return retval = new XOptimizer.foldMultZero_return();
+		retval.start = input.LT(1);
+
+		XTree root_0 = null;
+
+		XTree _first_0 = null;
+		XTree _last = null;
+
+
+		XTree l=null;
+		XTree r=null;
+		XTree char_literal39=null;
+
+		XTree l_tree=null;
+		XTree r_tree=null;
+		XTree char_literal39_tree=null;
+		RewriteRuleNodeStream stream_22=new RewriteRuleNodeStream(adaptor,"token 22");
+		RewriteRuleNodeStream stream_ID=new RewriteRuleNodeStream(adaptor,"token ID");
+		RewriteRuleNodeStream stream_INTCONST=new RewriteRuleNodeStream(adaptor,"token INTCONST");
+
+		try {
+			// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:147:13: ( ^( '*' l= ID r= INTCONST ) {...}? -> INTCONST[\"0\"] )
+			// de\\dhbw\\compiler\\antlrxcompiler\\XOptimizer.g:148:5: ^( '*' l= ID r= INTCONST ) {...}?
+			{
+			_last = (XTree)input.LT(1);
+			{
+			XTree _save_last_1 = _last;
+			XTree _first_1 = null;
+			_last = (XTree)input.LT(1);
+			char_literal39=(XTree)match(input,22,FOLLOW_22_in_foldMultZero749); if (state.failed) return retval;
+			 
+			if ( state.backtracking==1 ) stream_22.add(char_literal39);
+
+			if ( state.backtracking==1 )
+			if ( _first_0==null ) _first_0 = char_literal39;
+			match(input, Token.DOWN, null); if (state.failed) return retval;
+			_last = (XTree)input.LT(1);
+			l=(XTree)match(input,ID,FOLLOW_ID_in_foldMultZero753); if (state.failed) return retval;
+			 
+			if ( state.backtracking==1 ) stream_ID.add(l);
+
+			_last = (XTree)input.LT(1);
+			r=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_foldMultZero757); if (state.failed) return retval;
+			 
+			if ( state.backtracking==1 ) stream_INTCONST.add(r);
+
+			match(input, Token.UP, null); if (state.failed) return retval;
+			_last = _save_last_1;
+			}
+
+
+			if ( !((isZero((r!=null?r.getText():null)))) ) {
+				if (state.backtracking>0) {state.failed=true; return retval;}
+				throw new FailedPredicateException(input, "foldMultZero", "isZero($r.text)");
+			}
+			// AST REWRITE
+			// elements: INTCONST
+			// token labels: 
+			// rule labels: retval
+			// token list labels: 
+			// rule list labels: 
+			// wildcard labels: 
+			if ( state.backtracking==1 ) {
+			retval.tree = root_0;
+			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+			root_0 = (XTree)adaptor.nil();
+			// 148:48: -> INTCONST[\"0\"]
+			{
+				adaptor.addChild(root_0, (XTree)adaptor.create(INTCONST, "0"));
+			}
+
+
+			retval.tree = (XTree)adaptor.rulePostProcessing(root_0);
+			input.replaceChildren(adaptor.getParent(retval.start),
+								  adaptor.getChildIndex(retval.start),
+								  adaptor.getChildIndex(_last),
+								  retval.tree);
+			}
+
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return retval;
+	}
+	// $ANTLR end "foldMultZero"
+
 	// Delegated rules
 
 
@@ -2759,58 +3468,78 @@ public class XOptimizer extends TreeRewriter {
 	public static final BitSet FOLLOW_foldConstMinusFloatInt_in_bottomup114 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_foldConstMultFloatInt_in_bottomup118 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_foldConstDivFloatInt_in_bottomup122 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_UMINUS_in_uminus138 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_INTCONST_in_uminus142 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_UMINUS_in_uminus155 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_FLOATCONST_in_uminus159 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_22_in_multZeroOne173 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_INTCONST_in_multZeroOne177 = new BitSet(new long[]{0x0000000005C00200L});
-	public static final BitSet FOLLOW_23_in_multZeroOne186 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_24_in_multZeroOne190 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_22_in_multZeroOne194 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_26_in_multZeroOne198 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ID_in_multZeroOne202 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_22_in_multZeroOne241 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_23_in_multZeroOne247 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_24_in_multZeroOne251 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_22_in_multZeroOne255 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_26_in_multZeroOne259 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ID_in_multZeroOne263 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_INTCONST_in_multZeroOne274 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_23_in_foldConstAddInt315 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_INTCONST_in_foldConstAddInt319 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_INTCONST_in_foldConstAddInt323 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_24_in_foldConstMinusInt341 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_INTCONST_in_foldConstMinusInt345 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_INTCONST_in_foldConstMinusInt349 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_22_in_foldConstMultInt367 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_INTCONST_in_foldConstMultInt371 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_INTCONST_in_foldConstMultInt375 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_26_in_foldConstDivInt393 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_INTCONST_in_foldConstDivInt397 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_INTCONST_in_foldConstDivInt401 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_23_in_foldConstAddFloat419 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_FLOATCONST_in_foldConstAddFloat423 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_FLOATCONST_in_foldConstAddFloat427 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_24_in_foldConstMinusFloat445 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_FLOATCONST_in_foldConstMinusFloat449 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_FLOATCONST_in_foldConstMinusFloat453 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_22_in_foldConstMultFloat471 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_FLOATCONST_in_foldConstMultFloat475 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_FLOATCONST_in_foldConstMultFloat479 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_26_in_foldConstDivFloat497 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_FLOATCONST_in_foldConstDivFloat501 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_FLOATCONST_in_foldConstDivFloat505 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_23_in_foldConstAddFloatInt523 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_FLOATCONST_in_foldConstAddFloatInt527 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_INTCONST_in_foldConstAddFloatInt531 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_24_in_foldConstMinusFloatInt549 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_FLOATCONST_in_foldConstMinusFloatInt553 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_INTCONST_in_foldConstMinusFloatInt557 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_22_in_foldConstMultFloatInt575 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_FLOATCONST_in_foldConstMultFloatInt579 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_INTCONST_in_foldConstMultFloatInt583 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_26_in_foldConstDivFloatInt601 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_FLOATCONST_in_foldConstDivFloatInt605 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_INTCONST_in_foldConstDivFloatInt609 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_foldConstAddIntFloat_in_bottomup126 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_foldConstMinusIntFloat_in_bottomup129 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_foldConstMultIntFloat_in_bottomup132 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_foldConstDivIntFloat_in_bottomup136 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_foldMultZero_in_bottomup140 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_UMINUS_in_uminus156 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_INTCONST_in_uminus160 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_UMINUS_in_uminus173 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_FLOATCONST_in_uminus177 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_22_in_multZeroOne191 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_INTCONST_in_multZeroOne195 = new BitSet(new long[]{0x0000000005C00200L});
+	public static final BitSet FOLLOW_23_in_multZeroOne204 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_24_in_multZeroOne208 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_22_in_multZeroOne212 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_26_in_multZeroOne216 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_ID_in_multZeroOne220 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_22_in_multZeroOne259 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_23_in_multZeroOne265 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_24_in_multZeroOne269 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_22_in_multZeroOne273 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_26_in_multZeroOne277 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_ID_in_multZeroOne281 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_INTCONST_in_multZeroOne292 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_23_in_foldConstAddInt333 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_INTCONST_in_foldConstAddInt337 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_INTCONST_in_foldConstAddInt341 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_24_in_foldConstMinusInt359 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_INTCONST_in_foldConstMinusInt363 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_INTCONST_in_foldConstMinusInt367 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_22_in_foldConstMultInt385 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_INTCONST_in_foldConstMultInt389 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_INTCONST_in_foldConstMultInt393 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_26_in_foldConstDivInt411 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_INTCONST_in_foldConstDivInt415 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_INTCONST_in_foldConstDivInt419 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_23_in_foldConstAddFloat437 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_FLOATCONST_in_foldConstAddFloat441 = new BitSet(new long[]{0x0000000000000100L});
+	public static final BitSet FOLLOW_FLOATCONST_in_foldConstAddFloat445 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_24_in_foldConstMinusFloat463 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_FLOATCONST_in_foldConstMinusFloat467 = new BitSet(new long[]{0x0000000000000100L});
+	public static final BitSet FOLLOW_FLOATCONST_in_foldConstMinusFloat471 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_22_in_foldConstMultFloat489 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_FLOATCONST_in_foldConstMultFloat493 = new BitSet(new long[]{0x0000000000000100L});
+	public static final BitSet FOLLOW_FLOATCONST_in_foldConstMultFloat497 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_26_in_foldConstDivFloat515 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_FLOATCONST_in_foldConstDivFloat519 = new BitSet(new long[]{0x0000000000000100L});
+	public static final BitSet FOLLOW_FLOATCONST_in_foldConstDivFloat523 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_23_in_foldConstAddFloatInt541 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_FLOATCONST_in_foldConstAddFloatInt545 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_INTCONST_in_foldConstAddFloatInt549 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_24_in_foldConstMinusFloatInt567 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_FLOATCONST_in_foldConstMinusFloatInt571 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_INTCONST_in_foldConstMinusFloatInt575 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_22_in_foldConstMultFloatInt593 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_FLOATCONST_in_foldConstMultFloatInt597 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_INTCONST_in_foldConstMultFloatInt601 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_26_in_foldConstDivFloatInt619 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_FLOATCONST_in_foldConstDivFloatInt623 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_INTCONST_in_foldConstDivFloatInt627 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_23_in_foldConstAddIntFloat645 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_INTCONST_in_foldConstAddIntFloat649 = new BitSet(new long[]{0x0000000000000100L});
+	public static final BitSet FOLLOW_FLOATCONST_in_foldConstAddIntFloat653 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_24_in_foldConstMinusIntFloat671 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_INTCONST_in_foldConstMinusIntFloat675 = new BitSet(new long[]{0x0000000000000100L});
+	public static final BitSet FOLLOW_FLOATCONST_in_foldConstMinusIntFloat679 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_22_in_foldConstMultIntFloat697 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_INTCONST_in_foldConstMultIntFloat701 = new BitSet(new long[]{0x0000000000000100L});
+	public static final BitSet FOLLOW_FLOATCONST_in_foldConstMultIntFloat705 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_26_in_foldConstDivIntFloat723 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_INTCONST_in_foldConstDivIntFloat727 = new BitSet(new long[]{0x0000000000000100L});
+	public static final BitSet FOLLOW_FLOATCONST_in_foldConstDivIntFloat731 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_22_in_foldMultZero749 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_ID_in_foldMultZero753 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_INTCONST_in_foldMultZero757 = new BitSet(new long[]{0x0000000000000008L});
 }

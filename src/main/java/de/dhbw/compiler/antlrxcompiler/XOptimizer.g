@@ -80,7 +80,7 @@ options {
 
 bottomup: uminus | foldConstAddInt | foldConstMinusInt | foldConstMultInt | foldConstDivInt | foldConstAddFloat
 | foldConstMinusFloat | foldConstMultFloat | foldConstDivFloat | foldConstAddFloatInt | foldConstMinusFloatInt
-| foldConstMultFloatInt | foldConstDivFloatInt;
+| foldConstMultFloatInt | foldConstDivFloatInt | foldConstAddIntFloat| foldConstMinusIntFloat |foldConstMultIntFloat | foldConstDivIntFloat | foldMultZero;
 
 
 uminus:	  
@@ -131,3 +131,18 @@ foldConstMultFloatInt:
 
 foldConstDivFloatInt:
     ^('/' l=FLOATCONST r=INTCONST) -> FLOATCONST[opFloat($l.text, $r.text, '/')];
+
+foldConstAddIntFloat:
+    ^('+' l=INTCONST r=FLOATCONST) -> FLOATCONST[opFloat($l.text, $r.text, '+')];
+
+foldConstMinusIntFloat:
+    ^('-' l=INTCONST r=FLOATCONST) -> FLOATCONST[opFloat($l.text, $r.text, '-')];
+
+foldConstMultIntFloat:
+    ^('*' l=INTCONST r=FLOATCONST) -> FLOATCONST[opFloat($l.text, $r.text, '*')];
+
+foldConstDivIntFloat:
+    ^('/' l=INTCONST r=FLOATCONST) -> FLOATCONST[opFloat($l.text, $r.text, '/')];
+
+foldMultZero:
+    ^('*' l=ID r=INTCONST) {isZero($r.text)}?  -> INTCONST["0"];
